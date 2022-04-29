@@ -19,8 +19,34 @@
 @import "./pages/homepage";
 @import "./pages/restaurants_pages";
 
-body {
-    background-color:white;
-    
-}
+/*utils et variables*/
+$colour-primary:#9356DC;
+$colour-secondary:#FF79DA;
+$colour-tertiary:#99E2D0;
+$colour-frames:#F6F6F6;
+$color-text-primary:black;
+$color-frequent:#FFFFFF;
 
+
+/*à supprimer par la suite*/
+@mixin border-test ($color:$color-text-primary){
+    border: 2px $color solid;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color:$color-frequent;
+    }
+.header {
+    background-color: $color-frequent;
+    display: flex;
+    width: 100%;
+    &_logo-image {
+        font-size: 10px;
+        @include border-test;
+        margin:auto;
+    }
+}
+.a-container {
+    @include border-test;
+    width:100%;
+}

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "sass": "sass ./sass/style.scss:./style.css -w --style compressed",
-  "prefix": "postcss ./style.css --use autoprefixer -d ./prefixed/"
+  "sass": "sass ./sass/style.scss:./sass/style.css -w --style compressed",
+  "prefix": "postcss ./sass/style.css --use autoprefixer -d ./sass/prefixed/"
   },
   "author": "",
   "license": "ISC",
