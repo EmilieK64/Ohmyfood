@@ -20,33 +20,155 @@
 @import "./pages/restaurants_pages";
 
 /*utils et variables*/
-$colour-primary:#9356DC;
-$colour-secondary:#FF79DA;
-$colour-tertiary:#99E2D0;
-$colour-frames:#F6F6F6;
+$color-primary:#9356DC;
+$color-secondary:#FF79DA;
+$color-tertiary:#99E2D0;
+$color-frames-primary:#F6F6F6;
 $color-text-primary:black;
+$color-text-secondary:darken($color-frames-primary,30%);
+$color-frames-secondary:darken($color-frames-primary,10%); /*à valider???? fonctionne mais plutôt mixin*/
 $color-frequent:#FFFFFF;
-
+$font-size-primary:17px;
+$font-size-secondary:15px;
 
 /*à supprimer par la suite*/
 @mixin border-test ($color:$color-text-primary){
     border: 2px $color solid;
 }
+@mixin text-primary { /*à utiliser pour le texte en gras sur les menus garder et traduire en  anglais certains commentaires*/ 
+    font-size : $font-size-primary;
+    font-weight: bold;
+}
+@mixin text-complementary {/*à utiliser pour le texte en gras sur les menus*/
+    font-size: $font-size-secondary;
+    color: $color-frames-secondary;
+}
+@mixin welcome-page-heading {
+    font-size : 27px;
+    margin-right:5%;
+    margin-left:5%;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
     background-color:$color-frequent;
+    word-wrap: break-word;
+    font-family: Roboto, sans-serif;
     }
+.icon-place {
+    margin-right:20px;
+}
+.icon {
+    font-size:20px;
+}
+
 .header {
+    display: flex;
     background-color: $color-frequent;
+    width: 100%;
+    &_a-for-logo {
+        font-size: 10px;
+        margin:auto;
+        margin-top:10px;
+        margin-bottom:10px;
+            &_logo {
+                 @include border-test;
+            }
+        }
+    &_a-for-arrow {
+       position: relative;
+       left: 100px;
+       top:20px;
+       height: 22px;
+       font-size:20px;
+       width:20px;
+       color:$color-text-primary;
+    }
+}
+.section {
     display: flex;
     width: 100%;
-    &_logo-image {
-        font-size: 10px;
-        @include border-test;
+    background-color:$color-frames-primary;
+    @include border-test;
+    flex-direction: column;
+}
+.form {
+    width:100%;
+    text-align: center;
+    
+    &_location-field {
+        display:flex;
+        background-color:$color-frames-secondary;/*vérifier que la syntaxe ok*/
+        justify-content:center;
+        width:100%;
+        margin-bottom:10px;
+    }
+    &_location-text {
+            background-color: $color-frames-secondary;/*vérifier que la syntaxe ok*/
+            border:none;  /*vérifier que la syntaxe ok*/ /*à solutionner quand on saisit le texte la bordure apparaît*/
+            // color:$color-text-primary; ne veut pas marcher
+            font-size: $font-size-primary;
+    }
+    &_information {
         margin:auto;
+        width:85%;
+            &_heading {
+            @include welcome-page-heading;
+            &--centered {
+                text-align: center;
+                }
+            }
+            &_subtitle {
+            font-size : 20px;
+            color:$color-text-secondary;
+                &--centered {
+                    text-align: center;
+                }
+            }
+    }
+} 
+.btn {
+    margin-top:8px;
+    margin-bottom: 44px;
+    width: 245px;
+    height: 50px;
+    border-radius: 25px 25px 25px 25px;
+    background:linear-gradient($color-secondary, $color-primary); /*vérifier le dégradé et intégrer l'effet attendu*/
+    border:none;
+    color:$color-frequent;
+    font-size:$font-size-primary;
+}
+.website-running-information {
+    display:flex;
+    background-color: $color-frequent;
+    font-size:$font-size-primary*0.8;
+   
+    
+    &_heading{
+        @include welcome-page-heading;
+    }
+    &_fields{
+        width:80%; 
+        justify-content:center;
     }
 }
-.a-container {
+.field {
+    display:flex;
+    flex-direction: row;
+    background-color:$color-frames-primary;
+    height:50px;
     @include border-test;
     width:100%;
+    border-radius: 20px 20px 20px 20px;
+    &_number-place {
+        background-color: $color-primary;
+        color:$color-frequent;
+        border-radius:25px 25px 25px 25px;
+        width:20px;
+        height:20px;
+    }
 }
+/*A résoudre : décallage à gauche*/
+
+
+ 
+    

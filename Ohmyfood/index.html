@@ -12,36 +12,42 @@
     <main>
         <body><!--validate w3C-->
             <header class="header">
-                <figure><a href="#" class="header_a-container-for-logo"><img class="header_logo-image" src="images/ohmyfood@2x.svg" alt="logo Ohmyfood"/></a></figure>
+               <a href="#" class="header_a-for-logo"><img class="header_logo" src="images/ohmyfood@2x.svg" alt="logo Ohmyfood"/></a></figure>
             </header>
-            <section class="exploring-restaurants">
-                <form method="post" action="traitement.php" class="form">
-                    <figure class="form_location-icon"><i class="fa-solid fa-location-dot icon location-icon"></i></figure>
-                    <input type="text" class="form_location-text" name="city" placeholder="Paris, Belleville"/>
-                    <h1 class="centered-heading welcome-page-heading">Réserver le menu qui vous convient</h1>
-                    <p class="heading_subtitle">Découvrez des restaurants d'exception sélectionnées pr nos soins</p>
-                    <input type="submit" class="btn" value="Explorer nos restaurants"/>  
+            <section class="section">
+                <form method="post" class="form" action="traitement.php" >
+                    <div class="form_location-field">
+                        <figure class="icon-place"><i class="fa-solid fa-location-dot icon"></i></figure>
+                        <input type="text" class="form_location-text" name="city" placeholder="Paris, Belleville"/>
+                    </div>
+                    <div class="form_information">
+                        <h1 class=" form_information_heading form_information_heading--centered">Réserver le menu qui vous convient</h1>
+                        <p class="form_information_subtitle">Découvrez des restaurants d'exception sélectionnés par nos soins.</p>
+                    </div> 
+                    <input type="submit" class="btn" value="Explorer nos restaurants"/> 
                 </form>
             </section>  
-            <section class="running-website">
-                <h2 class="left-heading welcome-page-heading">Fonctionnement</h3>
-                <div class="step-field step-field-1">
-                    <figure class="number-place"><i class="fa-solid fa-1 icon number-icon number-icon-1"></i></figure>
-                    <figure class="icon-image-place"><i class="fa-solid fa-mobile-screen icon-image mobile-icon"></i></figure>
-                    <p>Choisissez un restaurant</p>
-                </div>
-                <div class="step-field step-field-2">
-                    <figure class="number-place"><i class="fa-solid fa-2 icon number-icon number-icon-2"></i></figure>
-                    <figure class="icon-image-place"><i class="fa-solid fa-mobile-screen icon-image steps-icon"></i></figure>
-                    <p>Composez votre menu</p>
-                </div>
-                <div class="step-field step-field-2">
-                    <figure class="number-place"><i class="fa-solid fa-3 icon number-icon number-icon-3"></i></figure>
-                    <figure class="icon-image-place"><i class="fa-solid fa-house icon-image restaurant-icon"></i></figure>
-                    <p>Dégustez au restaurant</p>
+            <section class="website-running-information section">
+                <h2 class=" website-running-information_heading">Fonctionnement</h3>
+                <div class="website-running-information_fields">
+                    <div class="field field--1">
+                        <figure class="field_number-place"><i class="fa-solid fa-1 icon number-icon number-icon-1"></i></figure>
+                        <figure class="field_image-place"><i class="fa-solid fa-mobile-screen icon-image mobile-icon"></i></figure>
+                        <p>Choisissez un restaurant</p>
+                    </div>
+                    <div class="field field--2">
+                        <figure class="field_number-place"><i class="fa-solid fa-2 icon number-icon number-icon-2"></i></figure>
+                        <figure class="field_image-place"><i class="fas fa-solid fa-mobile-screen icon-image steps-icon"></i></figure>
+                        <p>Composez votre menu</p>
+                    </div>
+                    <div class="field field--3">
+                        <figure class="field_number-place"><i class="fa-solid fa-3 icon number-icon number-icon-3"></i></figure>
+                        <figure class="field_image-place"><i class="fas fa-solid fa-house icon-image restaurant-icon"></i></figure>
+                        <p>Dégustez au restaurant</p>
+                    </div>
                 </div>
             </section>
-            <section class="restaurants-selection">
+            <section class="restaurants-selection section">
                 <h2 class="left-heading welcome-page_heading">Restaurants</h2>
                 <div class="restaurant-cards-section">
                     <div class="restaurant-cards">
@@ -96,7 +102,7 @@
                     </div>
                 </div>    
             </section>
-            <footer class="additional-info-solicitation">
+            <footer class="additional-info-solicitation section">
                 <div class ="logo"><!--h1 à définir?validate w3C-->
                     <a href="#"><img class="logo_image" src="images/ohmyfood@2x.svg" alt="logo Ohmyfood"/></a>
                 </div>

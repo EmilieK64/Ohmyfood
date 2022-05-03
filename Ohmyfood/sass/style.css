@@ -339,26 +339,139 @@ template {
 }
 
 /*utils et variables*/
+/*à valider???? fonctionne mais plutôt mixin*/
 /*à supprimer par la suite*/
 body {
-  font-family: "Roboto", sans-serif;
   background-color: #FFFFFF;
+  word-wrap: break-word;
+  font-family: Roboto, sans-serif;
+}
+
+.icon-place {
+  margin-right: 20px;
+}
+
+.icon {
+  font-size: 20px;
 }
 
 .header {
-  background-color: #FFFFFF;
   display: flex;
+  background-color: #FFFFFF;
   width: 100%;
 }
-.header_logo-image {
+.header_a-for-logo {
   font-size: 10px;
-  border: 2px black solid;
   margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.header_a-for-logo_logo {
+  border: 2px black solid;
+}
+.header_a-for-arrow {
+  position: relative;
+  left: 100px;
+  top: 20px;
+  height: 22px;
+  font-size: 20px;
+  width: 20px;
+  color: black;
 }
 
-.a-container {
+.section {
+  display: flex;
+  width: 100%;
+  background-color: #F6F6F6;
+  border: 2px black solid;
+  flex-direction: column;
+}
+
+.form {
+  width: 100%;
+  text-align: center;
+}
+.form_location-field {
+  display: flex;
+  background-color: #dddddd;
+  /*vérifier que la syntaxe ok*/
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.form_location-text {
+  background-color: #dddddd;
+  /*vérifier que la syntaxe ok*/
+  border: none;
+  /*vérifier que la syntaxe ok*/
+  /*à solutionner quand on saisit le texte la bordure apparaît*/
+  font-size: 17px;
+}
+.form_information {
+  margin: auto;
+  width: 85%;
+}
+.form_information_heading {
+  font-size: 27px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+.form_information_heading--centered {
+  text-align: center;
+}
+.form_information_subtitle {
+  font-size: 20px;
+  color: #aaaaaa;
+}
+.form_information_subtitle--centered {
+  text-align: center;
+}
+
+.btn {
+  margin-top: 8px;
+  margin-bottom: 44px;
+  width: 245px;
+  height: 50px;
+  border-radius: 25px 25px 25px 25px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  /*vérifier le dégradé et intégrer l'effet attendu*/
+  border: none;
+  color: #FFFFFF;
+  font-size: 17px;
+}
+
+.website-running-information {
+  display: flex;
+  background-color: #FFFFFF;
+  font-size: 13.6px;
+}
+.website-running-information_heading {
+  font-size: 27px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+.website-running-information_fields {
+  width: 80%;
+  justify-content: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: row;
+  background-color: #F6F6F6;
+  height: 50px;
   border: 2px black solid;
   width: 100%;
+  border-radius: 20px 20px 20px 20px;
 }
+.field_number-place {
+  background-color: #9356DC;
+  color: #FFFFFF;
+  border-radius: 25px 25px 25px 25px;
+  width: 20px;
+  height: 20px;
+}
+
+/*A résoudre : décallage à gauche*/
 
 /*# sourceMappingURL=style.css.map */
