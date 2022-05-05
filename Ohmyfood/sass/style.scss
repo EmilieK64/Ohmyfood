@@ -34,6 +34,7 @@ $size-frequent:20px;
 $icon-font-size:$size-frequent;
 $border-radius-primary:$size-frequent $size-frequent $size-frequent $size-frequent;
 $border-radius-secondary:25px 25px 25px 25px;
+$border-radius-tertiary:$size-frequent $size-frequent 0px 0px;
 $box-shadow-primary: 4px 3px 8px $color-text-secondary;
 
 /*à supprimer par la suite*/
@@ -66,7 +67,7 @@ body {
                 text-align: center;
             }
 }
-.icon-place {
+.icon-place { /*à voir si on gard*/
     margin-right:$size-frequent;
 }
 .icon {
@@ -77,16 +78,13 @@ body {
     display: flex;
     background-color: $color-frequent;
     width: 100%;
-    &_a-for-logo {
+    &_link-field-on-logo {
         font-size: 10px;
         margin:auto;
         margin-top:10px;
         margin-bottom:10px;
-            &_logo {
-                 @include border-test;
-            }
         }
-    &_a-for-arrow {
+    &_link-field-on-arrow {
        position: relative;
        left: 100px;
        top:$size-frequent;
@@ -106,17 +104,21 @@ body {
     display:flex;
     width:100%;
     flex-direction:column;
+    justify-content:space-between;
 }
 .section > div > div {
     width:80%; 
-    display:flex;
-    
+    display:flex;  
 }
+.link {
+    display:flex;
+    text-decoration: none;
+ }
 .form {
     text-align: center;
     &_location-field {
         display:flex;
-        background-color:$color-frames-secondary;/*vérifier que la syntaxe ok*/
+        background-color:$color-frames-secondary;/*vérifier que l-syntaxe ok*/
         justify-content:center;
         width:100%;
         margin-bottom:10px;
@@ -154,7 +156,6 @@ body {
 .website-running-information {
     background-color: $color-frequent;
     &_fields{
-        justify-content:space-between;
         align-items:center;
         height:192px;
         margin-bottom: 30px; 
@@ -187,14 +188,78 @@ body {
         color:$color-text-secondary; /*résoudre le pbl d'affichage de certains icônes et trouver le bon icone pour l'étape 3 et l'animation quand on clique rose*/
     }
 }
-.restaurant-card {
-    width:80%;
-    &_image {
-    object-fit:cover;
-    width:100%;
-    height:60%;
+.restaurants{ 
+    align-items: center;
+    &_restaurants-card {
+        box-shadow:$box-shadow-primary;
+        border-radius: $border-radius-primary;
+        margin-bottom: 30px;
+            &_link-field {
+                width:100%;
+                height:250px;
+                flex-direction: column;
+                text-decoration:none;
+                color:$color-text-primary;
+                &_image {
+                    object-fit:cover;
+                    width:100%;
+                    height:70%;
+                    border-radius: $border-radius-tertiary;
+                    } 
+                &_frame-for-new-information {
+                    width:30%;
+                    padding:5px 0px 5px 0px;
+                    background-color:$color-tertiary;
+                    text-align: center;
+                    }
+                }
+            &_comments {
+                display:flex;
+                &_field {
+                    align-self:flex-start;
+                    width:80%;
+                    margin-left:5px;
+                    display:flex;
+                    &_restaurant-name {
+                        font-size:$font-size-primary;
+                        font-weight:bold;
+                        margin-bottom:0;
+                    }
+                    &_restaurant-location-name {
+                        font-size:$font-size-secondary;
+                        margin-top:5px;
+                    }
+                }
+            }
+                &_heart-icon-place {
+                    align-self:stretch;
+                }
     }
-}
+} 
+        .footer {
+            background-color:$color-text-primary;
+            color:$color-frequent;
+            padding-left:30px;
+            &_logo {
+                color:white; /*à travailler*/
+            }
+            &_field-for-information {
+                display:flex;
+                color:white;
+                &_link {
+                    color:$color-frequent;
+                    &_icone-place {
+                        margin-left:0;
+                        margin-right:10px;
+                    }
+                }
+            }
+        }
 
+/*remplacer la section des cards par un nav?*/
+/*résoudre le comments qui n'est pas pris en compte*/
+/*relire les specs et regarder le site en détails*/
+ 
 /*mettre un texte-shadow sous les cartes, cliquable*/
-/*revérifier les animations attendues, les tester*/
+/*revérifier les animations attendues, cursor pointer, la bonne redirection,les clicks avec les tester et supprimer les class inutiles, mettre une pseudo class? combinater, boucle, fonction,condition pour la couleur du texte en fonction du background*/
+
