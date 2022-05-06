@@ -199,7 +199,6 @@ body {
                 flex-direction: column;
                 text-decoration:none;
                 color:$color-text-primary;
-                // display:flex;
                 &_image {
                     object-fit:cover;
                     width:100%;
@@ -219,6 +218,7 @@ body {
                         width:80%;
                         margin-left:5px;
                         display:flex;
+                        flex-direction:column;
                         &_restaurant-name {
                             font-size:$font-size-primary;
                             font-weight:bold;
@@ -230,7 +230,9 @@ body {
                         }
                     }
                     &_heart-icon-place {
+                        display:flex;
                         align-self:stretch;
+                        align-items: center;
                     }
                 }
             }

@@ -527,6 +527,7 @@ body {
   width: 80%;
   margin-left: 5px;
   display: flex;
+  flex-direction: column;
 }
 .restaurants_card_link-field_comments_field_restaurant-name {
   font-size: 17px;
@@ -538,7 +539,9 @@ body {
   margin-top: 5px;
 }
 .restaurants_card_link-field_comments_heart-icon-place {
+  display: flex;
   align-self: stretch;
+  align-items: center;
 }
 
 .footer {
