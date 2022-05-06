@@ -464,7 +464,7 @@ body {
   margin-bottom: 30px;
 }
 
-.field {
+.steps-field {
   display: flex;
   align-items: center;
   background-color: #F6F6F6;
@@ -473,7 +473,7 @@ body {
   font-size: 15.3px;
   box-shadow: 4px 3px 8px #aaaaaa;
 }
-.field_number-place {
+.steps-field_number-place {
   background-color: #9356DC;
   color: #FFFFFF;
   border-radius: 25px 25px 25px 25px;
@@ -482,10 +482,10 @@ body {
   margin-left: -9px;
   margin-right: 0;
 }
-.field_number-place_icon {
+.steps-field_number-place_icon {
   font-size: 16px;
 }
-.field_image-place {
+.steps-field_image-place {
   margin-left: 20px;
   margin-right: 20px;
   color: #aaaaaa;
@@ -495,49 +495,49 @@ body {
 .restaurants {
   align-items: center;
 }
-.restaurants_restaurants-card {
+.restaurants_card {
   box-shadow: 4px 3px 8px #aaaaaa;
   border-radius: 20px 20px 20px 20px;
   margin-bottom: 30px;
 }
-.restaurants_restaurants-card_link-field {
+.restaurants_card_link-field {
   width: 100%;
   height: 250px;
   flex-direction: column;
   text-decoration: none;
   color: black;
 }
-.restaurants_restaurants-card_link-field_image {
+.restaurants_card_link-field_image {
   object-fit: cover;
   width: 100%;
   height: 70%;
   border-radius: 20px 20px 0px 0px;
 }
-.restaurants_restaurants-card_link-field_frame-for-new-information {
+.restaurants_card_link-field_frame-for-new-information {
   width: 30%;
   padding: 5px 0px 5px 0px;
   background-color: #99E2D0;
   text-align: center;
 }
-.restaurants_restaurants-card_comments {
+.restaurants_card_link-field_comments {
   display: flex;
 }
-.restaurants_restaurants-card_comments_field {
+.restaurants_card_link-field_comments_field {
   align-self: flex-start;
   width: 80%;
   margin-left: 5px;
   display: flex;
 }
-.restaurants_restaurants-card_comments_field_restaurant-name {
+.restaurants_card_link-field_comments_field_restaurant-name {
   font-size: 17px;
   font-weight: bold;
   margin-bottom: 0;
 }
-.restaurants_restaurants-card_comments_field_restaurant-location-name {
+.restaurants_card_link-field_comments_field_restaurant-location-name {
   font-size: 15px;
   margin-top: 5px;
 }
-.restaurants_restaurants-card_heart-icon-place {
+.restaurants_card_link-field_comments_heart-icon-place {
   align-self: stretch;
 }
 

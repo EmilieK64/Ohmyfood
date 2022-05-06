@@ -161,7 +161,7 @@ body {
         margin-bottom: 30px; 
     }
 }
-.field {
+.steps-field {
     display:flex; 
     align-items: center;
     background-color:$color-frames-primary;
@@ -177,7 +177,6 @@ body {
         height:$size-frequent;
         margin-left:-9px;
         margin-right: 0;
-       
         &_icon {
             font-size:$icon-font-size*0.8;
         }
@@ -190,7 +189,7 @@ body {
 }
 .restaurants{ 
     align-items: center;
-    &_restaurants-card {
+    &_card {
         box-shadow:$box-shadow-primary;
         border-radius: $border-radius-primary;
         margin-bottom: 30px;
@@ -200,6 +199,7 @@ body {
                 flex-direction: column;
                 text-decoration:none;
                 color:$color-text-primary;
+                // display:flex;
                 &_image {
                     object-fit:cover;
                     width:100%;
@@ -211,31 +211,31 @@ body {
                     padding:5px 0px 5px 0px;
                     background-color:$color-tertiary;
                     text-align: center;
-                    }
-                }
-            &_comments {
-                display:flex;
-                &_field {
-                    align-self:flex-start;
-                    width:80%;
-                    margin-left:5px;
+                    }     
+                &_comments {
                     display:flex;
-                    &_restaurant-name {
-                        font-size:$font-size-primary;
-                        font-weight:bold;
-                        margin-bottom:0;
+                    &_field {
+                        align-self:flex-start;
+                        width:80%;
+                        margin-left:5px;
+                        display:flex;
+                        &_restaurant-name {
+                            font-size:$font-size-primary;
+                            font-weight:bold;
+                            margin-bottom:0;
+                        }
+                        &_restaurant-location-name {
+                            font-size:$font-size-secondary;
+                            margin-top:5px;
+                        }
                     }
-                    &_restaurant-location-name {
-                        font-size:$font-size-secondary;
-                        margin-top:5px;
+                    &_heart-icon-place {
+                        align-self:stretch;
                     }
                 }
             }
-                &_heart-icon-place {
-                    align-self:stretch;
-                }
-    }
-} 
+        }
+    } 
         .footer {
             background-color:$color-text-primary;
             color:$color-frequent;
