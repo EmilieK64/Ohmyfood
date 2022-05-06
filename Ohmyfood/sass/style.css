@@ -442,6 +442,7 @@ body {
 }
 
 .btn {
+  cursor: pointer;
   margin-top: 8px;
   margin-bottom: 44px;
   width: 245px;
@@ -506,6 +507,7 @@ body {
   flex-direction: column;
   text-decoration: none;
   color: black;
+  position: relative;
 }
 .restaurants_card_link-field_image {
   object-fit: cover;
@@ -518,6 +520,12 @@ body {
   padding: 5px 0px 5px 0px;
   background-color: #99E2D0;
   text-align: center;
+  align-self: baseline;
+  position: abolute;
+  top: 20px;
+  position: absolute;
+  top: 0px;
+  right: 16px;
 }
 .restaurants_card_link-field_comments {
   display: flex;
@@ -525,7 +533,7 @@ body {
 .restaurants_card_link-field_comments_field {
   align-self: flex-start;
   width: 80%;
-  margin-left: 5px;
+  margin-left: 10px;
   display: flex;
   flex-direction: column;
 }
