@@ -454,6 +454,12 @@ body {
   color: #FFFFFF;
   font-size: 17px;
   box-shadow: 4px 3px 8px #aaaaaa;
+  opacity: 1;
+  transition: opacity 250ms;
+}
+.btn:hover {
+  opacity: 0.8;
+  box-shadow: 2px 5px 10px #5d5d5d;
 }
 
 .website-running-information {
@@ -490,7 +496,7 @@ body {
   margin-left: 20px;
   margin-right: 20px;
   color: #aaaaaa;
-  /*résoudre le pbl d'affichage de certains icônes et trouver le bon icone pour l'étape 3 et l'animation quand on clique rose*/
+  /*trouver le bon icone pour l'étape 3 et l'animation quand on clique rose*/
 }
 
 .restaurants {
@@ -500,10 +506,11 @@ body {
   box-shadow: 4px 3px 8px #aaaaaa;
   border-radius: 20px 20px 20px 20px;
   margin-bottom: 30px;
+  height: 300px;
 }
 .restaurants_card_link-field {
   width: 100%;
-  height: 250px;
+  height: 70%;
   flex-direction: column;
   text-decoration: none;
   color: black;
@@ -511,8 +518,7 @@ body {
 }
 .restaurants_card_link-field_image {
   object-fit: cover;
-  width: 100%;
-  height: 70%;
+  height: 100%;
   border-radius: 20px 20px 0px 0px;
 }
 .restaurants_card_link-field_frame-for-new-information {
@@ -529,27 +535,46 @@ body {
 }
 .restaurants_card_link-field_comments {
   display: flex;
+  align-self: flex-start;
 }
 .restaurants_card_link-field_comments_field {
-  align-self: flex-start;
   width: 80%;
   margin-left: 10px;
   display: flex;
   flex-direction: column;
 }
-.restaurants_card_link-field_comments_field_restaurant-name {
+.restaurants_card_link-field_comments_field_link-for-comments {
+  flex-direction: column;
+  color: black;
+}
+.restaurants_card_link-field_comments_field_link-for-comments_restaurant-name {
   font-size: 17px;
   font-weight: bold;
   margin-bottom: 0;
 }
-.restaurants_card_link-field_comments_field_restaurant-location-name {
+.restaurants_card_link-field_comments_field_link-for-comments_restaurant-location-name {
   font-size: 15px;
   margin-top: 5px;
 }
-.restaurants_card_link-field_comments_heart-icon-place {
+.restaurants_card_link-field_comments_field_heart-icon-place {
   display: flex;
-  align-self: stretch;
-  align-items: center;
+}
+
+.heart-icon {
+  /*à améliorer pour le côté progressif avec transform origin et scaleX?*/
+  color: #aaaaaa;
+  background-color: #FFFFFF;
+  padding-top: 5px;
+  font-size: 25px;
+}
+.heart-icon::before {
+  content: "\f004";
+  transition: color 2000ms ease-in-out;
+}
+.heart-icon:hover::before {
+  color: #FF79DA;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .footer {
@@ -573,10 +598,31 @@ body {
   margin-right: 10px;
 }
 
-/*remplacer la section des cards par un nav?*/
-/*résoudre le comments qui n'est pas pris en compte*/
 /*relire les specs et regarder le site en détails*/
-/*mettre un texte-shadow sous les cartes, cliquable*/
 /*revérifier les animations attendues, cursor pointer, la bonne redirection,les clicks avec les tester et supprimer les class inutiles, mettre une pseudo class? combinater, boucle, fonction,condition pour la couleur du texte en fonction du background*/
+/*Boutons
+● Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir. ok
+L’ombre portée devra également être plus visible.
+● À terme, les visiteurs pourront sauvegarder leurs menus préférés. Pour ça, un
+bouton "J’aime" en forme de cœur est présent sur la maquette. Au clic, il devra se
+remplir progressivement. Pour cette première version, l’effet peut être apparaître au
+survol sur desktop au lieu du clic.
+Page d’accueil
+● Quand l’application aura plus de menus, un “loading spinner” sera nécessaire. Sur
+cette maquette, nous souhaitons en avoir un aperçu. Il devra apparaître pendant 1 à
+3 secondes quand on arrive sur la page d'accueil, couvrir l'intégralité de l'écran, et
+utiliser les animations CSS (pas de librairie). Le design de ce loader n’est pas défini,
+toute proposition est donc la bienvenue tant qu’elle est cohérente avec la charte
+graphique du site.
+Pages de menu
+● À l’arrivée sur la page, les plats devront apparaître progressivement avec un léger
+décalage dans le temps. Ils pourront soit apparaître un par un, soit par groupe
+“Entrée”, “Plat” et “Dessert”. Un exemple de l’effet attendu est fourni.
+● Le visiteur peut ajouter les plats qu'il souhaite à sa commande en cliquant dessus.
+Cela fait apparaître une petite coche à droite du plat. Cette coche devra coulisser de
+la droite vers la gauche. Pour cette première version, l’effet peut apparaître au survol
+sur desktop au lieu du clic. Si l’intitulé du plat est trop long, il devra être rogné avec
+des points de suspension. Un exemple de l’effet attendu est fourni.
+/*après la présentation, charger la nouvelle version de powershell et de vs code*/
 
 /*# sourceMappingURL=style.css.map */

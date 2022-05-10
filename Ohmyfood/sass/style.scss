@@ -28,6 +28,7 @@ $color-text-primary:black;
 $color-text-secondary:darken($color-frames-primary,30%);
 $color-frames-secondary:darken($color-frames-primary,10%); /*à valider???? fonctionne mais plutôt mixin*/
 $color-frequent:#FFFFFF;
+$color-gradient:linear-gradient($color-secondary, $color-primary);
 $font-size-primary:17px;
 $font-size-secondary:15px;
 $size-frequent:20px;
@@ -148,11 +149,18 @@ body {
     width: 245px;
     height: 50px;
     border-radius: $border-radius-secondary;
-    background:linear-gradient($color-secondary, $color-primary); /*vérifier le dégradé et intégrer l'effet attendu en terme d'animation*/
+    background:$color-gradient;
+     /*vérifier le dégradé et intégrer l'effet attendu en terme d'animation*/
     border:none;
     color:$color-frequent;
     font-size:$font-size-primary;
     box-shadow:$box-shadow-primary;
+    opacity:1;
+    transition:opacity 250ms;
+        &:hover {
+            opacity:0.8;
+            box-shadow: 2px 5px 10px darken($color-text-secondary,30%);
+        }
 }
 .website-running-information {
     background-color: $color-frequent;
@@ -185,7 +193,7 @@ body {
     &_image-place {
         margin-left:$size-frequent;
         margin-right:$size-frequent;
-        color:$color-text-secondary; /*résoudre le pbl d'affichage de certains icônes et trouver le bon icone pour l'étape 3 et l'animation quand on clique rose*/
+        color:$color-text-secondary; /*trouver le bon icone pour l'étape 3 et l'animation quand on clique rose*/
     }
 }
 .restaurants{ 
@@ -194,17 +202,18 @@ body {
         box-shadow:$box-shadow-primary;
         border-radius: $border-radius-primary;
         margin-bottom: 30px;
+        height:300px;
             &_link-field {
                 width:100%;
-                height:250px;
+                height:70%;
                 flex-direction: column;
                 text-decoration:none;
                 color:$color-text-primary;
                 position:relative;
                 &_image {
                     object-fit:cover;
-                    width:100%;
-                    height:70%;
+                    // width:100%;
+                    height:100%;
                     border-radius: $border-radius-tertiary;
                     } 
                 &_frame-for-new-information {
@@ -218,58 +227,102 @@ body {
                     position:absolute;
                     top: 0px;
                     right: 16px;
-                    }     
+                    }   
                 &_comments {
                     display:flex;
+                    align-self:flex-start;
                     &_field {
-                        align-self:flex-start;
                         width:80%;
                         margin-left:10px;
                         display:flex;
                         flex-direction:column;
-                        &_restaurant-name {
-                            font-size:$font-size-primary;
-                            font-weight:bold;
-                            margin-bottom:0;
+                        &_link-for-comments {
+                            flex-direction:column;
+                            color:$color-text-primary;
+                            &_restaurant-name {
+                                font-size:$font-size-primary;
+                                font-weight:bold;
+                                margin-bottom:0;
+                            }
+                            &_restaurant-location-name {
+                                font-size:$font-size-secondary;
+                                margin-top:5px;
+                            }
                         }
-                        &_restaurant-location-name {
-                            font-size:$font-size-secondary;
-                            margin-top:5px;
+                        &_heart-icon-place {
+                            display:flex;
                         }
-                    }
-                    &_heart-icon-place {
-                        display:flex;
-                        align-self:stretch;
-                        align-items: center;
                     }
                 }
             }
         }
-    } 
-        .footer {
-            background-color:$color-text-primary;
-            color:$color-frequent;
-            padding-left:30px;
-            &_logo {
-                color:white; /*à travailler*/
-            }
-            &_field-for-information {
-                display:flex;
-                color:white;
-                &_link {
-                    color:$color-frequent;
-                    &_icone-place {
-                        margin-left:0;
-                        margin-right:10px;
-                    }
-                }
-            }
-        }
+    }
 
-/*remplacer la section des cards par un nav?*/
-/*résoudre le comments qui n'est pas pris en compte*/
+.heart-icon { /*à améliorer pour le côté progressif avec transform origin et scaleX?*/
+    color: $color-text-secondary;
+    background-color:$color-frequent;
+    padding-top:5px; 
+    font-size: 25px;
+     &::before {
+            content: "\f004";
+            transition: color 2000ms ease-in-out;
+        }  
+    &:hover {
+        &::before {
+        color:$color-secondary;
+        cursor:pointer;
+        font-weight: bold;
+        }  
+    } 
+} 
+
+.footer {
+    background-color:$color-text-primary;
+    color:$color-frequent;
+    padding-left:30px;
+    &_logo {
+        color:white; /*à travailler*/
+    }
+    &_field-for-information {
+        display:flex;
+        color:white;
+        &_link {
+            color:$color-frequent;
+            &_icone-place {
+                margin-left:0;
+                margin-right:10px;
+            }
+        }
+    }
+}
+
+
+
 /*relire les specs et regarder le site en détails*/
  
-/*mettre un texte-shadow sous les cartes, cliquable*/
-/*revérifier les animations attendues, cursor pointer, la bonne redirection,les clicks avec les tester et supprimer les class inutiles, mettre une pseudo class? combinater, boucle, fonction,condition pour la couleur du texte en fonction du background*/
 
+/*revérifier les animations attendues, cursor pointer, la bonne redirection,les clicks avec les tester et supprimer les class inutiles, mettre une pseudo class? combinater, boucle, fonction,condition pour la couleur du texte en fonction du background*/
+/*Boutons
+● Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir. ok
+L’ombre portée devra également être plus visible.
+● À terme, les visiteurs pourront sauvegarder leurs menus préférés. Pour ça, un
+bouton "J’aime" en forme de cœur est présent sur la maquette. Au clic, il devra se
+remplir progressivement. Pour cette première version, l’effet peut être apparaître au
+survol sur desktop au lieu du clic.
+Page d’accueil
+● Quand l’application aura plus de menus, un “loading spinner” sera nécessaire. Sur
+cette maquette, nous souhaitons en avoir un aperçu. Il devra apparaître pendant 1 à
+3 secondes quand on arrive sur la page d'accueil, couvrir l'intégralité de l'écran, et
+utiliser les animations CSS (pas de librairie). Le design de ce loader n’est pas défini,
+toute proposition est donc la bienvenue tant qu’elle est cohérente avec la charte
+graphique du site.
+Pages de menu
+● À l’arrivée sur la page, les plats devront apparaître progressivement avec un léger
+décalage dans le temps. Ils pourront soit apparaître un par un, soit par groupe
+“Entrée”, “Plat” et “Dessert”. Un exemple de l’effet attendu est fourni.
+● Le visiteur peut ajouter les plats qu'il souhaite à sa commande en cliquant dessus.
+Cela fait apparaître une petite coche à droite du plat. Cette coche devra coulisser de
+la droite vers la gauche. Pour cette première version, l’effet peut apparaître au survol
+sur desktop au lieu du clic. Si l’intitulé du plat est trop long, il devra être rogné avec
+des points de suspension. Un exemple de l’effet attendu est fourni.
+/*après la présentation, charger la nouvelle version de powershell et de vs code*/
