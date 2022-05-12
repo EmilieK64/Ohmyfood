@@ -443,23 +443,37 @@ body {
 
 .btn {
   cursor: pointer;
+  /*ne marche pas*/
   margin-top: 8px;
   margin-bottom: 44px;
   width: 245px;
   height: 50px;
   border-radius: 25px 25px 25px 25px;
   background: linear-gradient(#FF79DA, #9356DC);
-  /*vérifier le dégradé et intégrer l'effet attendu en terme d'animation*/
   border: none;
   color: #FFFFFF;
   font-size: 17px;
   box-shadow: 4px 3px 8px #aaaaaa;
-  opacity: 1;
-  transition: opacity 250ms;
+  position: relative;
+  z-index: 1;
 }
-.btn:hover {
-  opacity: 0.8;
-  box-shadow: 2px 5px 10px #5d5d5d;
+.btn:hover::after {
+  opacity: 1;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 2px 5px 10px #777777;
+  background: linear-gradient(#fface8, #ae80e5);
+  z-index: -1;
+  /*à quoi ça sert?*/
+  opacity: 0;
+  transition: opacity 2000ms;
+  border-radius: 25px 25px 25px 25px;
 }
 
 .website-running-information {
@@ -556,25 +570,32 @@ body {
   font-size: 15px;
   margin-top: 5px;
 }
-.restaurants_card_link-field_comments_field_heart-icon-place {
+
+.heart-icon-place {
+  /*utilisation de background clip text?*/
   display: flex;
 }
-
-.heart-icon {
-  /*à améliorer pour le côté progressif avec transform origin et scaleX?*/
-  color: #aaaaaa;
-  background-color: #FFFFFF;
-  padding-top: 5px;
-  font-size: 25px;
+.heart-icon-place_heart-icon {
+  margin-top: 25px;
+  margin-right: 20px;
+  z-index: 1;
+  position: relative;
 }
-.heart-icon::before {
-  content: "\f004";
-  transition: color 2000ms ease-in-out;
+.heart-icon-place_heart-icon:hover::after {
+  transform: scaleX(1);
 }
-.heart-icon:hover::before {
-  color: #FF79DA;
-  cursor: pointer;
-  font-weight: bold;
+.heart-icon-place_heart-icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  z-index: -1;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 1000ms;
 }
 
 .footer {

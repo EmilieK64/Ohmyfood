@@ -55,6 +55,14 @@ $box-shadow-primary: 4px 3px 8px $color-text-secondary;
     margin-right:5%;
     margin-left:5%;
 }
+@mixin pseudo-element {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+}
 
 body {
     background-color:$color-frequent;
@@ -143,23 +151,32 @@ body {
     }
 } 
 .btn {
-    cursor:pointer;
+    cursor:pointer;  /*ne marche pas*/
     margin-top:8px;
     margin-bottom: 44px;
     width: 245px;
     height: 50px;
     border-radius: $border-radius-secondary;
     background:$color-gradient;
-     /*vérifier le dégradé et intégrer l'effet attendu en terme d'animation*/
     border:none;
     color:$color-frequent;
     font-size:$font-size-primary;
     box-shadow:$box-shadow-primary;
-    opacity:1;
-    transition:opacity 250ms;
+    position:relative;
+    z-index:1;
         &:hover {
-            opacity:0.8;
-            box-shadow: 2px 5px 10px darken($color-text-secondary,30%);
+            &::after {
+            opacity:1;
+            } 
+        }
+        &::after {
+            @include pseudo-element;
+            box-shadow: 2px 5px 10px darken($color-frames-primary,50%);
+            background:linear-gradient(lighten($color-secondary,10%), lighten($color-primary, 10%));
+            z-index:-1; /*à quoi ça sert?*/
+            opacity:0;
+            transition: opacity 2000ms;
+            border-radius: $border-radius-secondary;
         }
 }
 .website-running-information {
@@ -249,55 +266,92 @@ body {
                                 margin-top:5px;
                             }
                         }
-                        &_heart-icon-place {
-                            display:flex;
-                        }
                     }
                 }
             }
         }
     }
-
-.heart-icon { /*à améliorer pour le côté progressif avec transform origin et scaleX?*/
-    color: $color-text-secondary;
-    background-color:$color-frequent;
-    padding-top:5px; 
-    font-size: 25px;
-     &::before {
-            content: "\f004";
-            transition: color 2000ms ease-in-out;
-        }  
-    &:hover {
-        &::before {
-        color:$color-secondary;
-        cursor:pointer;
-        font-weight: bold;
-        }  
-    } 
-} 
-
-.footer {
-    background-color:$color-text-primary;
-    color:$color-frequent;
-    padding-left:30px;
-    &_logo {
-        color:white; /*à travailler*/
-    }
-    &_field-for-information {
-        display:flex;
-        color:white;
-        &_link {
-            color:$color-frequent;
-            &_icone-place {
-                margin-left:0;
-                margin-right:10px;
+    .heart-icon-place{ /*utilisation de background clip text?*/
+        display:flex; 
+        &_heart-icon {
+        margin-top: 25px;
+        margin-right: 20px;
+        z-index: 1;
+        position: relative;
+        
+            &:hover{
+                &::after {
+                transform: scaleX(1);
+                }
+            }
+            &::after {
+            @include pseudo-element;
+            background-image: linear-gradient(#9356DC, #FF79DA);
+            z-index: -1;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform 1000ms;
             }
         }
     }
-}
+
+
+    // .train {
+    //     font-size:35px;
+    //     font-weight:900;
+    //     animation: progress-bar 5s infinite;
+    //     -webkit-background-clip: text;
+    //     -webkit-text-fill-color: transparent;
+    //     background-color: #bc2122;
+    //     background-image: linear-gradient(to top, #67A062 0%, #67A062 60%, #bc2122 60%, #bc2122 100%);
+    //     background-size: 100% 0%;
+    //     background-position:bottom;
+    //     background-repeat: no-repeat;
+    //   }
+      
+    //   @keyframes progress-bar {
+    //     from {
+    //       -webkit-background-clip: text;
+    //       -webkit-text-fill-color: transparent;
+    //       background-size: 100% 0%;
+    //     }
+    //     to {
+    //       -webkit-background-clip: text;
+    //       -webkit-text-fill-color: transparent;
+    //       background-size: 100% 100%;
+    //     }
+    //   }
 
 
 
+
+
+
+
+
+
+    
+        .footer {
+            background-color:$color-text-primary;
+            color:$color-frequent;
+            padding-left:30px;
+            &_logo {
+                color:white; /*à travailler*/
+            }
+            &_field-for-information {
+                display:flex;
+                color:white;
+                &_link {
+                    color:$color-frequent;
+                    &_icone-place {
+                        margin-left:0;
+                        margin-right:10px;
+                    }
+                }
+            }
+        }
+        
+//    
 /*relire les specs et regarder le site en détails*/
  
 
