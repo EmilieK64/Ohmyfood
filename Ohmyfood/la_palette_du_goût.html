@@ -6,22 +6,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;700;900&family=Shrikhand&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link rel="stylesheet" href="sass/style.css">
+        <link rel="stylesheet" href="sass/prefixed/style.css">
         <title>Ohmyfood</title>
     </head>
     <main>
         <body><!--validate w3C-->
             <header class="header">
                 <a href="index.html" class="header_link-field-on-arrow"><i class="fas fa-regular fa-arrow-left header_link-field-on-arrow_page-redirection"></i></a>
-                <a href="index.html" class="header_link-field-on-logo"><img class="header_link-field-on-logo_logo" src="images/ohmyfood@2x.svg" alt="logo Ohmyfood"/></a>
+                <a href="index.html" class="header_link-field-on-logo"><img class="header_link-field-on-logo_logo restaurants_card_link-field_image" src="images/ohmyfood@2x.svg" alt="logo Ohmyfood"/></a>
             </header>
-            <section class="restaurant-presentation section">
-                <figure class="restaurant-image-place-over-menu"><img src="images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" class="restaurant-image" alt="Restaurant La Palette du Goût"></figure>
-                <div class="restaurant-menu-choice">
-                    <div>
-                        <div>
-                            <h1 class="restaurant-name-heart restaurant-name-heart-on-menu-page">La palette du goût</h1>
-                            <figure class="heart-icon-place"><i class="fas fa-thin fa-heart icon heart-icon"></i></figure>
+            <section class="restaurant section">
+                <div class="restaurant_image-place "><img src="images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" class="restaurant_image-place_image" alt="Restaurant La Palette du Goût image"></div>
+                <div class="restaurant_presentation">
+                    <div class="restaurant_presentation_menu">
+                        <div class="restaurant_presentation_menu_heading-place">
+                            <h1 class="restaurant_presentation_menu_heading-place_heading">La palette du goût</h1>
+                            <div class="heart-icon-place"><i class="fa-regular fa-heart heart-icon-place_heart-icon"></i></div>
                         </div>
                         <div>
                             <div class="restaurant-menu starters">
@@ -126,7 +126,7 @@
                         </div>
                     </div>
                     <form method="post" action="traitement.php" class="form">
-                        <input type="submit" class="btn" value="Commander"/>  
+                        <button type="submit" class="btn" >Commander</button>
                     </form>     
                 </div>
             </section>      

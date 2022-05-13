@@ -94,9 +94,7 @@ body {
         margin-bottom:10px;
         }
     &_link-field-on-arrow {
-       position: relative;
-       left: 100px;
-       top:$size-frequent;
+        margin:20px 20px 20px 20px;
        height: 22px;
        font-size:$size-frequent;
        width:$size-frequent;
@@ -229,7 +227,6 @@ body {
                 position:relative;
                 &_image {
                     object-fit:cover;
-                    // width:100%;
                     height:100%;
                     border-radius: $border-radius-tertiary;
                     } 
@@ -272,13 +269,16 @@ body {
         }
     }
     .heart-icon-place{ /*utilisation de background clip text?*/
-        display:flex; 
-        &_heart-icon {
+     display:flex; 
+     &_heart-icon {
         margin-top: 25px;
         margin-right: 20px;
         z-index: 1;
         position: relative;
-        
+        font-size:25px; 
+        padding: 3px;
+        height: 25px;
+        color:grey;
             &:hover{
                 &::after {
                 transform: scaleX(1);
@@ -287,20 +287,211 @@ body {
             &::after {
             @include pseudo-element;
             background-image: linear-gradient(#9356DC, #FF79DA);
+            background-clip: text;
+            color:transparent;
             z-index: -1;
             transform-origin: right;
             transform: scaleX(0);
             transition: transform 1000ms;
+            border-radius: 50%;
             }
-        }
+        } 
     }
+    /*seconde proposition*/
+//      .heart-icon-place { 
+//      display:flex; 
+//      &_heart-icon {
+//         margin-top: 25px;
+//         margin-right: 20px;
+//         z-index: 1;
+//         position: relative;
+//         font-size:25px; 
+//         color: $color-frequent;
+//         background-color: $color-text-secondary;
+//         border-radius: 50%;
+//         padding: 3px;
+//         height: 25px;
+//         &::before {
+//             content: "\f004";
+//             font-weight: bold;
+//             transition: color 1s ease-out;
+//             }
+//         &:hover{
+//             &::before{
+//             color:#FF79DA;
+//             cursor: pointer;
+//             }
+//         }
+//     }
+// }
+/*troisième proposition*/
+// .heart-icon-place { /*autre proposition?*/
+//      display:flex; 
+//      &_heart-icon {
+//      margin-top: 25px;
+//      margin-right: 20px;
+//      position: relative;
+//      font-size:25px; 
+//      padding: 3px;
+//      height: 25px;
+//      z-index:1;
+   
+//     &:hover{
+//       &::after {
+//       animation: progress-bar 1s;
+//      }
+//     }
+//      &::after {
+//         @include pseudo-element;
+//         background-image: linear-gradient(#9356DC, #FF79DA);/*ok*/
+//         background-clip: text;/*ok*/
+//         color:transparent;/*ok**/
+//         color:grey;   /*ok*/
+//         font-weight:900; /*ok*/
+//         background-size:100% 0%; /*ok*/
+//         background-position:bottom;/*ok*/
+//         background-repeat: no-repeat;/*ok*/
+//         z-index:-1;
+//         border-radius: 50%;
+//         padding: 3px;
+//         height: 25px;
+//         }
+//     }
+// }
+//  @keyframes progress-bar {
+//     from {
+//         background-clip: text;
+//         color: transparent;
+//         background-size: 100% 0%;
+//         }
+//    to   {
+//         background-clip: text;
+//         color: transparent;
+//         background-size: 100% 100%;
+//         }
+//    }
 
 
-    // .train {
+    // @keyframes loader {
+    //     100% {
+    //       opacity: 1;
+    //       z-index: 10;
+    //     }
+    //   } 
+      
+    //   @keyframes jump {
+    //     0% {
+    //       transform: translateY(0);
+    //     }
+    //     25% {
+    //       transform: translateY(0.5rem);
+    //     }
+    //     75% {
+    //       transform: translateY(-0.5rem);
+    //     }
+    //     100% {
+    //       transform: translateY(0);
+    //     }
+    //  }
+    //  .loader {
+    //     position: fixed;
+    //     height: 100%;
+    //     width: 100%;
+    //     left: 0;
+    //     top: 0;
+    //     align-items:center;
+    //     justify-content:center;
+    //     background-color: $color-tertiary;
+    //     animation: loader 0.01s;
+    //     animation-delay: 3s;
+    //     animation-fill-mode: both;
+    //     z-index: 10000;
+    //     display:flex;
+        
+      
+    //     &__item {
+    //       height: 1rem;
+    //       width: 1rem;
+    //       border-radius: 1rem;
+    //       animation: jump 1s;
+    //       animation-iteration-count: 3;
+      
+    //       &Container {
+    //         display: flex;
+    //         width: 5rem;
+    //         justify-content: space-between;
+    //       }
+      
+    //       &--1 {
+    //         background-color: $color-primary;
+    //       }
+      
+    //       &--2 {
+    //         background-color: $color-secondary;
+    //         animation-delay: 0.25s;
+    //       }
+      
+    //       &--3 {
+    //         background-color: $color-tertiary;
+    //         animation-delay: 0.5s;
+    //       }
+    //     }
+    //  }
+    // .loading
+    // {
+    //   display: block;
+    //   position: fixed;
+    //   width: 100%;
+    //   height: 100%;
+    //   z-index: 10;
+    //   /*ici tout ce qui concerne votre background linear gradient*/
+    //   background-color: lightgrey;
+    //   animation: hideLoader 3500ms 1 forwards;
+    //   animation-delay: 1500ms;
+    // }
+ 
+    // .loading::after
+    // {
+    //   content : "";
+    //   display: block;
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%,-50%);
+    //   /*ici votre design de bordure */
+    //   width: 50px;
+    //   height: 50px;
+    //   border: black solid 5px;
+    //   border-top-color: red;
+    //   border-bottom-color: red;
+    //   border-radius: 50%;
+    //   animation: spin 1s linear infinite;
+    // }
+ 
+    // @keyframes hideLoader
+    // {
+    //   100%
+    //   {
+    //     opacity: 0;
+    //     display: none;
+    //   }
+    // }
+ 
+    // @keyframes spin
+    // {
+    //   100%
+    //   {
+    //     transform: translate(-50%,-50%) rotate(360deg);
+    //   }
+    // }
+ 
+
+
+    // .heart-icon-place {
     //     font-size:35px;
     //     font-weight:900;
     //     animation: progress-bar 5s infinite;
-    //     -webkit-background-clip: text;
+    //     background-clip: text;
     //     -webkit-text-fill-color: transparent;
     //     background-color: #bc2122;
     //     background-image: linear-gradient(to top, #67A062 0%, #67A062 60%, #bc2122 60%, #bc2122 100%);
@@ -324,19 +515,14 @@ body {
 
 
 
-
-
-
-
-
-
     
         .footer {
             background-color:$color-text-primary;
             color:$color-frequent;
             padding-left:30px;
             &_logo {
-                color:white; /*à travailler*/
+                 /*à travailler*/
+                background-color:white;
             }
             &_field-for-information {
                 display:flex;
@@ -349,14 +535,52 @@ body {
                     }
                 }
             }
-        }
+        }/*page restaurant la palette du goût*/
+.restaurant { 
+    @include border-test;    
+    &_image-place{
+       height:300px;
+        width:100%;
+        margin-bottom:-10px;
         
+            &_image {
+                object-fit:cover;
+                height:100%; 
+                
+                } 
+    }
+    &_presentation {
+        @include border-test;   
+        align-items: center;
+        border-radius:$border-radius-tertiary;
+      
+       
+        
+        &_menu {
+            flex-direction:column;
+            
+              
+            &_heading-place {
+                display: flex;
+                flex-direction: row;
+                &_heading {
+                    font-family:Shrikhand, sans-serif;
+                    
+                    width:70%;
+                    
+                }
+            }
+
+        }
+    }
+}
+ 
 //    
 /*relire les specs et regarder le site en détails*/
  
-
+/*boucle for avec sass pour appliquer l'animation au 3 blocsopacity et annimation delay margin, after pour le soulignage vertcss animation generator : animista margin left sur le prix flow overflow hidden et text overflow word text : no wrap*/
 /*revérifier les animations attendues, cursor pointer, la bonne redirection,les clicks avec les tester et supprimer les class inutiles, mettre une pseudo class? combinater, boucle, fonction,condition pour la couleur du texte en fonction du background*/
-/*Boutons
+/*Boutons transform-basis
 ● Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir. ok
 L’ombre portée devra également être plus visible.
 ● À terme, les visiteurs pourront sauvegarder leurs menus préférés. Pour ça, un
@@ -380,3 +604,5 @@ la droite vers la gauche. Pour cette première version, l’effet peut apparaît
 sur desktop au lieu du clic. Si l’intitulé du plat est trop long, il devra être rogné avec
 des points de suspension. Un exemple de l’effet attendu est fourni.
 /*après la présentation, charger la nouvelle version de powershell et de vs code*/
+
+/*montrer le visuel: page d'accueil et un responsive, une page menu : un responsive au bout de 5 mn code html : */
