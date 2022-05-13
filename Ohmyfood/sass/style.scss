@@ -290,35 +290,57 @@ body {
             }
         }
     }
-    .heart-icon-place{ /*utilisation de background clip text?*/
-     display:flex; 
-     &_heart-icon {
-        margin-top: 25px;
-        margin-right: 20px;
-        z-index: 1;
-        position: relative;
-        font-size:25px; 
-        padding: 3px;
-        height: 25px;
-        color:grey;
-            &:hover{
-                &::after {
-                transform: scaleX(1);
-                }
-            }
-            &::after {
-            @include pseudo-element;
-            background-image: linear-gradient(#9356DC, #FF79DA);
-            background-clip: text;
-            color:transparent;
-            z-index: -1;
-            transform-origin: right;
-            transform: scaleX(0);
-            transition: transform 1000ms;
-            border-radius: 50%;
-            }
-        } 
+    .heart-icon-place {
+     position:relative;
     }
+    .fas,.far {
+        font-size:25px; 
+        position:absolute;
+        left:4px;
+        bottom:11px;
+        transform: translateY(-50%);
+    }
+    .fas {
+        color:transparent;
+        background-image: linear-gradient(to top,$color-secondary, $color-primary);
+        background-clip: text;
+        -webkit-background-clip:text;
+        opacity:0;
+        transition:all 200ms ease-in-out;
+        &:hover {
+            opacity:1;
+            transform: translateY(-50%) scale(1.1);
+        }
+    }
+    // .heart-icon-place{ /*utilisation de background clip text?*/
+    //  display:flex; 
+    //  &_heart-icon {
+    //     margin-top: 25px;
+    //     margin-right: 20px;
+    //     z-index: 1;
+    //     position: relative;
+    //     font-size:25px; 
+    //     padding: 3px;
+    //     height: 25px;
+    //     color:grey;
+    //         &:hover{
+    //             &::after {
+    //             transform: scaleX(1);
+    //             }
+    //         }
+    //         &::after {
+    //         @include pseudo-element;
+    //         background-image: linear-gradient(#9356DC, #FF79DA);
+    //         background-clip: text;
+    //         color:transparent;
+    //         z-index: -1;
+    //         transform-origin: right;
+    //         transform: scaleX(0);
+    //         transition: transform 1000ms;
+    //         border-radius: 50%;
+    //         }
+    //     } 
+    // }
     /*seconde proposition*/
 //      .heart-icon-place { 
 //      display:flex; 
@@ -543,7 +565,7 @@ body {
             color:$color-frequent;
             padding-left:30px;
             &_logo {
-                 /*à travailler*/
+                 /*à travailler : mettre du text en shrikhand à la place de l'image*/
                 background-color:white;
             }
             &_field-for-information {
@@ -658,7 +680,7 @@ body {
     }
 
 
-//    
+//    */rajouter un main*/
 /*relire les specs et regarder le site en détails*/
  
 /*boucle for avec sass pour appliquer l'animation au 3 blocsopacity et annimation delay margin, after pour le soulignage vertcss animation generator : animista margin left sur le prix flow overflow hidden et text overflow word text : no wrap*/
