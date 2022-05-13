@@ -38,6 +38,7 @@ $border-radius-secondary:25px 25px 25px 25px;
 $border-radius-tertiary:$size-frequent $size-frequent 0px 0px;
 $box-shadow-primary: 4px 3px 8px $color-text-secondary;
 
+
 /*à supprimer par la suite*/
 @mixin border-test ($color:$color-text-primary){
     border: 2px $color solid;
@@ -181,18 +182,39 @@ body {
     background-color: $color-frequent;
     &_fields{
         align-items:center;
-        height:192px;
-        margin-bottom: 30px; 
+        height:250px;
+        margin-bottom: 30px;   
+        justify-content: space-between;
     }
 }
+@mixin steps {
+    height:70px;
+    border-radius: $border-radius-primary;
+    box-shadow:$box-shadow-primary;
+    position:relative;
+    cursor:pointer;
+    z-index:1; 
+}
 .steps-field {
-    display:flex; 
+    @include steps;
     align-items: center;
     background-color:$color-frames-primary;
-    height:50px;
-    border-radius: $border-radius-primary;
-    font-size:$font-size-primary*0.9; 
-    box-shadow:$box-shadow-primary;
+    font-size:$font-size-primary*0.9;  
+    
+    &:hover {
+        &::after {
+            opacity:0.3;
+        }   
+    }
+    &::after {
+        @include pseudo-element;
+        box-shadow: 2px 5px 10px darken($color-frames-primary,50%);
+        z-index:-1; 
+        opacity:0;
+        transition: opacity 2000ms;
+        border-radius: $border-radius-primary;
+        background-color:#FF79DA;
+    }
     &_number-place {
         background-color: $color-primary;
         color:$color-frequent;
@@ -538,43 +560,104 @@ body {
         }/*page restaurant la palette du goût*/
 .restaurant { 
     @include border-test;    
-    &_image-place{
+    &_image-place {
        height:300px;
         width:100%;
-        margin-bottom:-10px;
-        
+        margin-bottom:-20px;
             &_image {
                 object-fit:cover;
                 height:100%; 
-                
-                } 
+            } 
     }
     &_presentation {
         @include border-test;   
         align-items: center;
         border-radius:$border-radius-tertiary;
-      
-       
-        
+        background-color: $color-frequent;
         &_menu {
             flex-direction:column;
-            
-              
             &_heading-place {
                 display: flex;
                 flex-direction: row;
                 &_heading {
                     font-family:Shrikhand, sans-serif;
-                    
                     width:70%;
-                    
+                    }
                 }
             }
-
+        }
+     }
+.menu-step {
+    @include border-test;
+    &_heading {
+    color:grey;
+    position:relative;
+    font-size:20px; /*voir pour la grosseur du titre*/
+    &::after {
+        background-color:$color-tertiary;
+        height:5px;
+        width:40px;
+        content:"";
+        position:absolute;
+        top:23px;
+        left:0;
         }
     }
-}
- 
+    &_comments-field {
+        @include steps;
+        display:flex; 
+        background-color:$color-frequent;
+        align-items: center;
+        flex-direction:row;
+        // justify-content: space-between;
+        &_details {
+            display:flex;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            flex-direction: column;
+            width:80%;
+            &_name{ 
+                font-size:$font-size-primary*1.1;
+                font-weight:bold;
+                margin-bottom:0;
+            }
+            &_additionnal-information {
+                font-size:$font-size-secondary;
+                margin-top:5px;
+            }
+        }
+        &_price-selection-field {
+            display:flex;
+            margin-left:0px;
+            width:110px;
+            height:100%;
+            align-items:center;
+            border-radius:0px 20px 20px 0px;
+            margin-right:-10px;
+            
+            &_price {
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                height:100%;
+                width:55px;
+            }
+            &_selection {
+                height:100%;
+                background-color:#99E2D0;
+                width:55px;
+                border-radius:0px 20px 20px 0px;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                overflow:hidden;
+            }
+        }
+        }
+        
+    }
+
+
 //    
 /*relire les specs et regarder le site en détails*/
  
