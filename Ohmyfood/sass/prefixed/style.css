@@ -829,6 +829,7 @@ des points de suspension. Un exemple de l’effet attendu est fourni.
   position: fixed;
   opacity: 0.9;
   background-color: #FFFFFF;
+  animation: end-loader 5000ms both;
 }
 .loading-spinner::before {
   position: absolute;
@@ -836,25 +837,22 @@ des points de suspension. Un exemple de l’effet attendu est fourni.
   display: block;
   height: 150px;
   width: 200px;
-  border-radius: 50%;
-  animation: loading-rotation 2000ms infinite linear;
   border-radius: 30%;
   border: 5px solid #FF79DA;
-  animation-iteration-count: 3;
 }
 .loading-spinner > .fa-martini-glass-citrus--left {
   font-size: 50px;
   font-weight: bold;
-  animation: loading-spinner-glass-toast 3000ms infinite linear;
+  animation: loading-spinner-glass-toast 2000ms 100ms infinite linear;
   color: #99E2D0;
-  animation-iteration-count: 3;
+  animation-iteration-count: 2;
 }
 .loading-spinner > .fa-martini-glass-citrus--right {
   font-size: 50px;
   font-weight: bold;
   color: #99E2D0;
-  animation: loading-spinner-glass-toast-reverse 3000ms infinite linear reverse;
-  animation-iteration-count: 3;
+  animation: loading-spinner-glass-toast-reverse 2000ms 100ms infinite linear reverse;
+  animation-iteration-count: 2;
 }
 
 @keyframes loading-spinner-glass-toast {
@@ -890,11 +888,26 @@ des points de suspension. Un exemple de l’effet attendu est fourni.
   60% {
     transform: translateX(60%);
   }
-  90%, 100% {
+  90% {
     transform: rotate(10deg) translateY(-20%);
   }
-  100% {
+  90%, 100% {
     transform: translate(90%, 10%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+@keyframes end-loader {
+  0% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    display: none;
   }
 }
 
