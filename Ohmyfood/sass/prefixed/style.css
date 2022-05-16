@@ -399,7 +399,7 @@ body {
 }
 
 .section > div > div {
-  width: 80%;
+  width: 100%;
   display: flex;
 }
 
@@ -660,6 +660,7 @@ body {
   flex-direction: column;
 }
 .restaurant_presentation_menu_heading-place {
+  margin-left: 10%;
   display: flex;
   flex-direction: row;
 }
@@ -669,7 +670,18 @@ body {
 }
 
 .menu-step {
+  margin-left: 10%;
   border: 2px black solid;
+  animation: opacity-effect 2000ms ease;
+}
+.menu-step--1 {
+  animation-delay: 300ms;
+}
+.menu-step--2 {
+  animation-delay: 600ms;
+}
+.menu-step--3 {
+  animation-delay: 900ms;
 }
 .menu-step_heading {
   color: grey;
@@ -697,31 +709,53 @@ body {
   background-color: #FFFFFF;
   align-items: center;
   flex-direction: row;
+  width: 80%;
+  cursor: pointer;
+}
+.menu-step_comments-field:hover > .menu-step_comments-field_price-selection-field {
+  margin-right: 0;
+}
+.menu-step_comments-field:hover > .menu-step_comments-field_price-selection-field > .menu-step_comments-field_price-selection-field_selection {
+  opacity: 1;
+}
+.menu-step_comments-field:hover > .menu-step_comments-field_price-selection-field > .menu-step_comments-field_price-selection-field_selection > .check-icon {
+  animation: rotation-three-quarters 1000ms 150ms;
+  color: #99E2D0;
+  background-color: #FFFFFF;
+  background-clip: text;
+  flex-shrink: 0;
+  border-radius: 25px 25px 25px 25px;
 }
 .menu-step_comments-field_details {
   display: flex;
-  overflow: hidden;
-  text-overflow: ellipsis;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
+  overflow: hidden;
 }
 .menu-step_comments-field_details_name {
   font-size: 18.7px;
   font-weight: bold;
   margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .menu-step_comments-field_details_additionnal-information {
   font-size: 15px;
   margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .menu-step_comments-field_price-selection-field {
   display: flex;
   margin-left: 0px;
   width: 110px;
   height: 100%;
-  align-items: center;
+  align-items: flex-end;
   border-radius: 0px 20px 20px 0px;
-  margin-right: -10px;
+  margin-right: -53px;
+  justify-content: flex-end;
 }
 .menu-step_comments-field_price-selection-field_price {
   display: flex;
@@ -738,11 +772,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  opacity: 0;
 }
 
+@keyframes rotation-three-quarters {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes opacity-effect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*relire les specs et regarder le site en détails*/
-/*boucle for avec sass pour appliquer l'animation au 3 blocsopacity et annimation delay margin, after pour le soulignage vertcss animation generator : animista margin left sur le prix flow overflow hidden et text overflow word text : no wrap*/
+/*boucle for avec sass pour appliquer l'animation au 3 blocsopacity et annimation delay margin, after pour le soulignage vertcss animation generator : animista margin right sur le prix flow overflow hidden et text overflow word text : no wrap*/
 /*revérifier les animations attendues, cursor pointer, la bonne redirection,les clicks avec les tester et supprimer les class inutiles, mettre une pseudo class? combinater, boucle, fonction,condition pour la couleur du texte en fonction du background*/
 /*Boutons transform-basis
 ● Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir. ok

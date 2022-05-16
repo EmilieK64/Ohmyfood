@@ -115,7 +115,7 @@ body {
     justify-content:space-between;
 }
 .section > div > div {
-    width:80%; 
+    width:100%; 
     display:flex;  
 }
 .link {
@@ -580,7 +580,7 @@ body {
                 }
             }
         }/*page restaurant la palette du goût*/
-.restaurant { 
+.restaurant {   
     @include border-test;    
     &_image-place {
        height:300px;
@@ -598,7 +598,9 @@ body {
         background-color: $color-frequent;
         &_menu {
             flex-direction:column;
+           
             &_heading-place {
+                margin-left:10%;
                 display: flex;
                 flex-direction: row;
                 &_heading {
@@ -609,43 +611,90 @@ body {
             }
         }
      }
+     $numb-menu-steps:3;
+     $anim-duration:300ms;
+     $anim-delay:$anim-duration;
 .menu-step {
+    margin-left:10%;
     @include border-test;
+    // opacity:0;
+    animation:opacity-effect 2000ms ease;
+    @for $i from 1 through $numb-menu-steps {
+        &--#{$i} {
+            animation-delay:$anim-delay * $i;
+            
+        }
+    }
     &_heading {
     color:grey;
     position:relative;
     font-size:20px; /*voir pour la grosseur du titre*/
+    
+    
+   
     &::after {
         background-color:$color-tertiary;
         height:5px;
         width:40px;
         content:"";
         position:absolute;
+        
         top:23px;
         left:0;
         }
     }
     &_comments-field {
+        // align-items: center; 
+       
         @include steps;
         display:flex; 
         background-color:$color-frequent;
         align-items: center;
         flex-direction:row;
+        width:80%;
+        cursor:pointer;
+            &:hover{
+                & > .menu-step_comments-field_price-selection-field {
+                        margin-right:0;
+                    & > .menu-step_comments-field_price-selection-field_selection {
+                            opacity:1;
+                            & > .check-icon {
+                                animation:rotation-three-quarters 1000ms 150ms;
+                                color:$color-tertiary;
+                                background-color:$color-frequent;
+                                background-clip: text;
+                                flex-shrink:0;
+                                border-radius: $border-radius-secondary;
+                             }
+                    } 
+                    
+                }
+            }
+        
+        
         // justify-content: space-between;
         &_details {
             display:flex;
-            overflow:hidden;
-            text-overflow:ellipsis;
             flex-direction: column;
-            width:80%;
+            width:100%;
+            overflow:hidden;
+               
+           
             &_name{ 
                 font-size:$font-size-primary*1.1;
                 font-weight:bold;
                 margin-bottom:0;
+                overflow:hidden;
+                text-overflow:ellipsis;
+                white-space:nowrap;
+                
             }
             &_additionnal-information {
                 font-size:$font-size-secondary;
                 margin-top:5px;
+                overflow:hidden;
+                text-overflow:ellipsis;
+                white-space:nowrap;
             }
         }
         &_price-selection-field {
@@ -653,16 +702,17 @@ body {
             margin-left:0px;
             width:110px;
             height:100%;
-            align-items:center;
+            align-items:flex-end;
             border-radius:0px 20px 20px 0px;
-            margin-right:-10px;
-            
+            margin-right:-53px;
+            justify-content:flex-end;
             &_price {
                 display:flex;
                 align-items: center;
                 justify-content: center;
                 height:100%;
                 width:55px;
+                
             }
             &_selection {
                 height:100%;
@@ -672,18 +722,36 @@ body {
                 display:flex;
                 align-items: center;
                 justify-content: center;
-                overflow:hidden;
+                opacity:0;
+            }
+            
+        }
+        } 
+    }
+        @keyframes rotation-three-quarters {
+            from {
+                transform:rotate(270deg);
+            }
+            to {
+                transform:rotate(0deg);
             }
         }
+   
+
+        @keyframes opacity-effect {
+            0% {
+                opacity:0; 
+            }
+            100% {
+                opacity:1;
+            }
         }
-        
-    }
 
 
 //    */rajouter un main*/
 /*relire les specs et regarder le site en détails*/
  
-/*boucle for avec sass pour appliquer l'animation au 3 blocsopacity et annimation delay margin, after pour le soulignage vertcss animation generator : animista margin left sur le prix flow overflow hidden et text overflow word text : no wrap*/
+/*boucle for avec sass pour appliquer l'animation au 3 blocsopacity et annimation delay margin, after pour le soulignage vertcss animation generator : animista margin right sur le prix flow overflow hidden et text overflow word text : no wrap*/
 /*revérifier les animations attendues, cursor pointer, la bonne redirection,les clicks avec les tester et supprimer les class inutiles, mettre une pseudo class? combinater, boucle, fonction,condition pour la couleur du texte en fonction du background*/
 /*Boutons transform-basis
 ● Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir. ok
