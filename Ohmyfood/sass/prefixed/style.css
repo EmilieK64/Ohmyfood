@@ -819,5 +819,83 @@ sur desktop au lieu du clic. Si l’intitulé du plat est trop long, il devra ê
 des points de suspension. Un exemple de l’effet attendu est fourni.
 /*après la présentation, charger la nouvelle version de powershell et de vs code*/
 /*montrer le visuel: page d'accueil et un responsive, une page menu : un responsive au bout de 5 mn code html : */
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  position: fixed;
+  opacity: 0.9;
+  background-color: #FFFFFF;
+}
+.loading-spinner::before {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+  animation: loading-rotation 2000ms infinite linear;
+  border-radius: 30%;
+  border: 5px solid #FF79DA;
+  animation-iteration-count: 3;
+}
+.loading-spinner > .fa-martini-glass-citrus--left {
+  font-size: 50px;
+  font-weight: bold;
+  animation: loading-spinner-glass-toast 3000ms infinite linear;
+  color: #99E2D0;
+  animation-iteration-count: 3;
+}
+.loading-spinner > .fa-martini-glass-citrus--right {
+  font-size: 50px;
+  font-weight: bold;
+  color: #99E2D0;
+  animation: loading-spinner-glass-toast-reverse 3000ms infinite linear reverse;
+  animation-iteration-count: 3;
+}
+
+@keyframes loading-spinner-glass-toast {
+  0% {
+    transform: translateX(0%);
+  }
+  20% {
+    transform: translateX(20%);
+  }
+  40% {
+    transform: translateX(40%);
+  }
+  60% {
+    transform: translateX(90%);
+  }
+  90%, 100% {
+    transform: rotate(-10deg) translateY(20%);
+  }
+  100% {
+    transform: translate(90%, 10%);
+  }
+}
+@keyframes loading-spinner-glass-toast-reverse {
+  0% {
+    transform: translateX(0%);
+  }
+  20% {
+    transform: translateX(20%);
+  }
+  40% {
+    transform: translateX(40%);
+  }
+  60% {
+    transform: translateX(60%);
+  }
+  90%, 100% {
+    transform: rotate(10deg) translateY(-20%);
+  }
+  100% {
+    transform: translate(90%, 10%);
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
