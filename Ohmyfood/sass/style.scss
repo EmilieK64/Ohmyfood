@@ -38,8 +38,8 @@ $border-radius-secondary:25px 25px 25px 25px;
 $border-radius-tertiary:$size-frequent $size-frequent 0px 0px;
 $box-shadow-primary: 4px 3px 8px $color-text-secondary;
 $breakpoints: (
-   medium-screen:768px,
-   desktop:992px,
+    medium-screen:768px,
+    desktop:992px,
 );
 @mixin steps {
     height:70px;
@@ -182,10 +182,25 @@ body {
     margin-left:5%;
             &--centered {
                 text-align: center;
+            //     @include medium-screen {
+            //         
+            //     }
             }
 }
 .icon-place { /*à voir si on gard*/
     margin-right:$size-frequent;
+    margin-top: 26px;
+    @include medium-screen { 
+    background-color: $color-text-secondary;
+    border-radius:25px 0px 0px 25px;
+    height: 20px;
+    width: 44px;
+    margin-right: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    margin-top: 10px;
+}
 }
 .icon {
     font-size:$icon-font-size;
@@ -228,18 +243,35 @@ body {
  }
  
 .form {
+    display: flex;
     text-align: center;
+    align-items: center;
+    flex-direction: column;
     &_location-field {
         display:flex;
         background-color:$color-frames-secondary;/*vérifier que l-syntaxe ok*/
         justify-content:center;
         width:100%;
         margin-bottom:10px;
+        @include medium-screen {
+            order:2;
+            align-self: flex-end;
+        }
     }
     &_location-text {
             background-color: $color-frames-secondary;/*vérifier que la syntaxe ok*/
             font-size: $font-size-primary;
             border:none;
+            margin-top:10px;
+            @include medium-screen {
+                display:flex;
+                text-align: center;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                border: 1px solid $color-text-secondary;
+                height:46px;
+
+            }
             &:focus {
                 outline:none;
             }
@@ -247,6 +279,15 @@ body {
     &_information {
         margin:auto;
         width:85%;
+        @include medium-screen {
+            order:1;
+            // align-items:flex-start;
+            & > .welcome-page-heading--centered {
+                @include medium-screen {
+                  margin-right:0;
+                }
+            }
+        }
             &_subtitle {
             font-size : $size-frequent;
             color:$color-text-secondary;
@@ -266,6 +307,8 @@ body {
     background:$color-gradient;
     border:none;
     color:$color-frequent;
+    align-items: center;
+    justify-content: center;
     font-size:$font-size-primary;
     box-shadow:$box-shadow-primary;
     position:relative;
@@ -285,17 +328,33 @@ body {
             border-radius: $border-radius-secondary;
         }
 }
+
+.btn--welcome-page {
+    @include medium-screen {
+        display:none;
+        
+     }
+}
+.btn--welcome-page-responsive {
+    display:none;
+    @include medium-screen {
+        display:flex;
+        margin: 10px 0px 10px 0px;
+        border-radius: 0px 25px 25px 0px;
+     }
+}
 .website-running-information {
     background-color: $color-frequent;
+    flex-wrap: wrap;
     &_fields{
         height:250px;
         margin-bottom: 30px;
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-around;
-        @include medium-screen {
-            height:180px;
-        }
+        // @include medium-screen {
+        // }
+        
      }
     }
 .steps-field {
@@ -305,6 +364,8 @@ body {
     width:400px;
     align-items: center;
     flex-wrap: wrap;
+    margin: 0px 10px 0px 10px;
+
     &:hover {
         &::after {
             opacity:0.3;
@@ -345,17 +406,24 @@ body {
         color:$color-text-secondary; 
     }
 }
+
+    
+
 .restaurants { 
     align-items:center;
     display: flex;
     flex-wrap:wrap;
     justify-content: space-around;
+    
     &_card {
         box-shadow:$box-shadow-primary;
         border-radius: $border-radius-primary;
         margin-bottom: 30px;
         height:300px;
         width:400px;
+        @include medium-screen {
+            margin-left:30px;
+        }
             &_link-field {
                 width:100%;
                 height:77%;
@@ -414,7 +482,8 @@ body {
         font-size:25px; 
         position:absolute;
         left:4px;
-        bottom:25px;
+        bottom:29px;
+        cursor: pointer;
     }
     .fas-heart {
         color:transparent;
