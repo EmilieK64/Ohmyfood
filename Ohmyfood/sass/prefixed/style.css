@@ -424,6 +424,11 @@ body {
   align-items: center;
   flex-direction: column;
 }
+@media screen and (min-width: 768px) {
+  .form {
+    background-color: #FFFFFF;
+  }
+}
 .form_location-field {
   display: flex;
   background-color: #dddddd;
@@ -436,6 +441,7 @@ body {
   .form_location-field {
     order: 2;
     align-self: flex-end;
+    background-color: #9356DC;
   }
 }
 .form_location-text {
@@ -465,6 +471,8 @@ body {
 @media screen and (min-width: 768px) {
   .form_information {
     order: 1;
+    background-color: #F6F6F6;
+    width: 100%;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 768px) {
@@ -482,7 +490,6 @@ body {
 
 .btn {
   cursor: pointer;
-  /*ne marche pas*/
   margin-top: 8px;
   margin-bottom: 44px;
   width: 245px;
@@ -515,6 +522,11 @@ body {
   opacity: 0;
   transition: opacity 2000ms;
   border-radius: 25px 25px 25px 25px;
+}
+@media screen and (min-width: 768px) {
+  .btn::after {
+    border-radius: 0px 25px 25px 0px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -594,7 +606,7 @@ body {
   height: 21px;
   padding-top: 4px;
   text-align: center;
-  margin-left: -9px;
+  margin-left: -10px;
   margin-right: 0;
 }
 .steps-field_number-place_icon {
@@ -722,7 +734,7 @@ body {
   .footer_field {
     flex-direction: row;
     justify-content: space-between;
-    margin-right: 20px;
+    margin-right: 141px;
   }
 }
 .footer_field_for-information {

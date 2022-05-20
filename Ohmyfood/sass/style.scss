@@ -251,15 +251,20 @@ body {
     text-align: center;
     align-items: center;
     flex-direction: column;
+    @include medium-screen {
+        background-color:$color-frequent;
+    }
     &_location-field {
         display:flex;
         background-color:$color-frames-secondary;/*vérifier que l-syntaxe ok*/
         justify-content:center;
         width:100%;
         margin-bottom:10px;
+        
         @include medium-screen {
             order:2;
             align-self: flex-end;
+            background-color:$color-primary;
         }
     }
     &_location-text {
@@ -285,7 +290,8 @@ body {
         width:85%;
         @include medium-screen {
             order:1;
-            // align-items:flex-start;
+            background-color: $color-frames-primary;
+            width:100%;
             & > .welcome-page-heading--centered {
                 @include medium-screen {
                   margin-right:0;
@@ -302,7 +308,7 @@ body {
     }
 } 
 .btn {
-    cursor:pointer;  /*ne marche pas*/
+    cursor:pointer;  
     margin-top:8px;
     margin-bottom: 44px;
     width: 245px;
@@ -330,6 +336,9 @@ body {
             opacity:0;
             transition: opacity 2000ms;
             border-radius: $border-radius-secondary;
+            @include medium-screen {
+                border-radius: 0px 25px 25px 0px;
+            }
         }
 }
 
@@ -398,7 +407,7 @@ body {
         height:21px;
         padding-top:4px;
         text-align: center;
-        margin-left:-9px;
+        margin-left:-10px;
         margin-right: 0;
         &_icon {
             font-weight:10px;
@@ -521,7 +530,7 @@ body {
         @include medium-screen {
             flex-direction: row;
             justify-content: space-between;
-            margin-right:20px;
+            margin-right:141px;
         }
         &_for-information {
         display:flex;
