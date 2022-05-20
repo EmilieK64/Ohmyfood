@@ -670,7 +670,6 @@ body {
   border-radius: 20px 20px 20px 20px;
   box-shadow: 4px 3px 8px #aaaaaa;
   position: relative;
-  cursor: pointer;
   z-index: 1;
   background-color: #F6F6F6;
   font-size: 15.3px;
@@ -882,16 +881,29 @@ body {
   font-family: Shrikhand, sans-serif;
   width: 100%;
 }
-.restaurant_presentation_menu_heading-place_details {
+.restaurant_presentation_menu_heading-place_heart {
+  display: flex;
+}
+
+.menu-form {
   display: flex;
   width: 80%;
 }
 
+@keyframes opacity-effect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .menu-step {
   display: flex;
   flex-direction: column;
   margin-left: 10%;
-  animation: opacity-effect 2000ms ease;
+  opacity: 0;
+  animation: opacity-effect 2000ms forwards;
 }
 .menu-step--1 {
   animation-delay: 300ms;
@@ -922,7 +934,6 @@ body {
   border-radius: 20px 20px 20px 20px;
   box-shadow: 4px 3px 8px #aaaaaa;
   position: relative;
-  cursor: pointer;
   z-index: 1;
   display: flex;
   background-color: #FFFFFF;
@@ -1000,14 +1011,6 @@ body {
   }
   to {
     transform: rotate(0deg);
-  }
-}
-@keyframes opacity-effect {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 
