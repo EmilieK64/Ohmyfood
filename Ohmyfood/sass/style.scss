@@ -384,7 +384,6 @@ body {
     align-items: center;
     flex-wrap: wrap;
     margin: 0px 10px 0px 10px;
-
     &:hover {
         &::after {
             opacity:0.3;
@@ -521,7 +520,6 @@ body {
     background-color:$color-text-primary;
     color:$color-frequent;
     padding-left:30px;
-   
     &_logo {
         color:$color-frequent;
         font-family:Shrikhand, sans-serif;
@@ -530,6 +528,7 @@ body {
     }
     &_field {
         flex-direction: column;
+        padding-bottom:26px;
         @include medium-screen {
             flex-direction: row;
             justify-content: space-between;
@@ -560,6 +559,7 @@ body {
             &_image {
                 object-fit:cover;
                 height:100%; 
+                width:100%;
             } 
     }
     &_presentation {
@@ -568,22 +568,33 @@ body {
         background-color: $color-frequent;
         &_menu {
             flex-direction:column;
+            width:100%;
             &_heading-place {
-                margin-left:10%;
+                // margin-left:10%;
                 display: flex;
-                flex-direction: row;
+                // flex-direction: row;
+                justify-content: center;
+                text-align: center;
+                width:100%;
                 &_heading {
                     font-family:Shrikhand, sans-serif;
-                    width:70%;
+                    width:100%;
                     }
+                &_details {
+                    display: flex;
+                    width:80%;
+                }
                 }
             }
         }
      }
+
      $numb-menu-steps:3;
      $anim-duration:300ms;
      $anim-delay:$anim-duration;
 .menu-step {
+    display: flex;
+    flex-direction: column;
     margin-left:10%;
     animation:opacity-effect 2000ms ease;
     @for $i from 1 through $numb-menu-steps {

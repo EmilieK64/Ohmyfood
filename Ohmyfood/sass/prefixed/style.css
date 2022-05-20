@@ -831,6 +831,7 @@ body {
 }
 .footer_field {
   flex-direction: column;
+  padding-bottom: 26px;
 }
 @media screen and (min-width: 768px) {
   .footer_field {
@@ -860,6 +861,7 @@ body {
 .restaurant_image-place_image {
   object-fit: cover;
   height: 100%;
+  width: 100%;
 }
 .restaurant_presentation {
   align-items: center;
@@ -868,18 +870,26 @@ body {
 }
 .restaurant_presentation_menu {
   flex-direction: column;
+  width: 100%;
 }
 .restaurant_presentation_menu_heading-place {
-  margin-left: 10%;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 .restaurant_presentation_menu_heading-place_heading {
   font-family: Shrikhand, sans-serif;
-  width: 70%;
+  width: 100%;
+}
+.restaurant_presentation_menu_heading-place_details {
+  display: flex;
+  width: 80%;
 }
 
 .menu-step {
+  display: flex;
+  flex-direction: column;
   margin-left: 10%;
   animation: opacity-effect 2000ms ease;
 }

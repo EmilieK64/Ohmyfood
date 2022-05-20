@@ -10,7 +10,7 @@
         <title>Ohmyfood</title>
     </head>
     <main>
-        <body><!--validate w3C-->
+        <body>
             <header class="header">
                 <a href="index.html" class="header_link-field-on-arrow"><i class="fas fa-regular fa-arrow-left header_link-field-on-arrow_page-redirection"></i></a>
                 <a href="index.html" class="header_link-field-on-logo"><img class="header_link-field-on-logo_logo restaurants_card_link-field_image" src="images/ohmyfood@2x.svg" alt="logo Ohmyfood"/></a>
@@ -21,7 +21,10 @@
                     <div class="restaurant_presentation_menu">
                         <div class="restaurant_presentation_menu_heading-place">
                             <h1 class="restaurant_presentation_menu_heading-place_heading">La palette du goût</h1>
-                            <div class="heart-icon-place"><i class="fa-regular fa-heart heart-icon-place_heart-icon"></i></div>
+                            <div class="heart-icon-place restaurant_presentation_menu_heading-place_heart">
+                                <i class="fa-regular fa-heart far-heart"></i>
+                                <i class="fa-solid fa-heart fas-heart"></i>
+                            </div>
                         </div>
                         <div class="restaurant_presentation_menu_details">
                             <div class="menu-step menu-step--1">
@@ -129,25 +132,34 @@
                         </div>
                     </div>
                     <form method="post" action="traitement.php" class="form">
-                        <button type="submit" class="btn" >Commander</button>
-                    </form>     
-                </div>
+                    <button type="submit" class="btn" >Commander</button>
+                </form>     
+                
             </section>      
-            <footer class="additional-info-solicitation section">
-                <div class ="logo">
-                    <a href="#"><img class="logo_image" src="images/ohmyfood@2x.svg" alt="logo Ohmyfood"/></a>
+            <footer class="footer section">
+                <a href="index.html" class="link"><h4 class="footer_logo">Ohmyfood</h4>
+                </a>
+                <div class="footer_field">
+                    <div class="footer_field_for-information">
+                        <a href="#" class="link footer_field_for-information_link">
+                            <figure class="footer_field_for-information_link_icone-place"><i class="fa-solid fa-utensils icon">
+                            </i></figure>
+                            <p>Proposer une restaurant</p>
+                        </a> 
+                    </div>
+                    <div class="footer_field_for-information">
+                        <a href="#" class="link footer_field_for-information_link" target="_blank">
+                            <figure class="footer_field_for-information_link_icone-place"><i class="fa-solid fa-handshake-angle icon"></i></figure>
+                            <p>Devenir partenaire</p>
+                        </a>
+                    </div >
+                    <a href="#" class="link footer_field_for-information_link" target="_blank">
+                        <p class="additional-info-solicitation_field">Mentions légales</p>
+                    </a>
+                    <a href="mailto:contact_ohmyfood@gmail.com" class="link footer_field_for-information_link"> 
+                        <p class="additional-info-solicitation_field">Contact</p>
+                    </a>
                 </div>
-                <div class="additional-info-solicitation_field">
-                    <figure><i class="fa-solid fa-utensils cutlery-icon icon"></i></figure>
-                    <p>Proposer une restaurant</p>
-                </div>
-                <div class="additional-info-solicitation_field solicitation-sentence">
-                    <figure><i class="fa-regular fa-handshake-simple hands-shaking-icon icon"></i></figure>
-                    <p>Proposer une restaurant</p>
-                </div class="additional-info-solicitation_field solicitation-sentence">
-                <p class="additional-info-solicitation_field">Mentions légales</p>
-                <p class="additional-info-solicitation_field">Mentions légales</p>
-            </footer>
         </body>
     </main>
 </html>
