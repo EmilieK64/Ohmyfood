@@ -868,6 +868,7 @@ body {
   background-color: #FFFFFF;
 }
 .restaurant_presentation_menu {
+  align-items: center;
   flex-direction: column;
   width: 100%;
 }
@@ -888,6 +889,8 @@ body {
 .menu-form {
   display: flex;
   width: 80%;
+  justify-content: space-around;
+  margin-bottom: 30px;
 }
 
 @keyframes opacity-effect {
@@ -901,9 +904,13 @@ body {
 .menu-step {
   display: flex;
   flex-direction: column;
-  margin-left: 10%;
+  height: 310px;
+  width: 440px;
+  margin-left: 90px;
+  margin-bottom: 40px;
   opacity: 0;
   animation: opacity-effect 2000ms forwards;
+  justify-content: space-between;
 }
 .menu-step--1 {
   animation-delay: 300ms;
@@ -1012,6 +1019,9 @@ body {
   to {
     transform: rotate(0deg);
   }
+}
+.btn--restaurant-page {
+  display: flex;
 }
 
 /*# sourceMappingURL=style.css.map */

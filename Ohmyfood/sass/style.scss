@@ -566,6 +566,7 @@ body {
         border-radius:$border-radius-tertiary;
         background-color: $color-frequent;
         &_menu {
+            align-items: center;
             flex-direction:column;
             width:100%;
             &_heading-place {
@@ -587,6 +588,8 @@ body {
 .menu-form {
         display: flex;
         width:80%;
+        justify-content: space-around;
+        margin-bottom:30px;
     }
      $numb-menu-steps:3;
      $anim-duration:300ms;
@@ -603,9 +606,13 @@ body {
 .menu-step {
     display: flex;
     flex-direction: column;
-    margin-left:10%;
+    height:310px;
+    width:440px;
+    margin-left:90px;
+    margin-bottom: 40px;
     opacity:0;
     animation:opacity-effect 2000ms forwards;
+    justify-content: space-between;
     @for $i from 1 through $numb-menu-steps {
         &--#{$i} {
             animation-delay:$anim-delay * $i;
@@ -696,9 +703,8 @@ body {
                 align-items: center;
                 justify-content: center;
                 opacity:0;
+            } 
             }
-            
-        }
         } 
     }
         @keyframes rotation-three-quarters {
@@ -710,7 +716,10 @@ body {
             }
         }
    
+.btn--restaurant-page {
+    display: flex;
 
+ }
         
 
 
