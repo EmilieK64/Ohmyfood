@@ -39,7 +39,7 @@ $border-radius-tertiary:$size-frequent $size-frequent 0px 0px;
 $box-shadow-primary: 4px 3px 8px $color-text-secondary;
 $breakpoints: (
     medium-screen:768px,
-    desktop:992px,
+    large-screen:1277px,
 );
 @mixin steps {
     height:70px;
@@ -62,7 +62,11 @@ $breakpoints: (
     @content;
     }
 }
-
+@mixin large-screen {
+    @media screen and (min-width: map-get($breakpoints, large-screen)) {
+    @content;
+    }
+}
 /*début loading spinner pour ce projet*/
 
 // @mixin fa-martini-glass-citrus {
@@ -352,11 +356,11 @@ body {
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-around;
-        // @include medium-screen {
-        // }
-        
-     }
+        @include large-screen {
+        height: 95px;
+        }
     }
+}
 .steps-field {
     @include steps;
     background-color:$color-frames-primary;
@@ -505,23 +509,34 @@ body {
     background-color:$color-text-primary;
     color:$color-frequent;
     padding-left:30px;
+   
     &_logo {
         color:$color-frequent;
         font-family:Shrikhand, sans-serif;
         font-size: 20px;
         margin-bottom:15px;
     }
-    &_field-for-information {
+    &_field {
+        flex-direction: column;
+        @include medium-screen {
+            flex-direction: row;
+            justify-content: space-between;
+            margin-right:20px;
+        }
+        &_for-information {
         display:flex;
-        color:white;
-        &_link {
-            color:$color-frequent;
-            &_icone-place {
-                margin-left:0;
-                margin-right:10px;
+        color:white; 
+        
+            &_link {
+               
+                color:$color-frequent;
+                &_icone-place {
+                    margin-left:0;
+                    margin-right:10px;
+                }
             }
         }
-    }
+    } 
 }
 
 /*page restaurant la palette du goût*/
