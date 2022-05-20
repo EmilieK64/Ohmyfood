@@ -40,7 +40,7 @@ $box-shadow-primary: 4px 3px 8px $color-text-secondary;
 $box-shadow-secondary:2px 5px 10px darken($color-frames-primary,50%);
 $breakpoints: (
     medium-screen:768px,
-    intermediate-screen:1150px,
+    intermediate-screen:1100px,
     large-screen:1277px,
 );
 @mixin steps {
@@ -628,7 +628,7 @@ body {
     @include intermediate-screen {
         flex-direction: row;
         height: 80px;
-        width: 87%;
+        width: 90%;
         margin-right: 179px;
     }
     
@@ -657,8 +657,8 @@ body {
         &_comments-field {     
             @include steps;
             @include intermediate-screen {
-                    width:290px;
-                    margin-right: 10px;
+                    width:276px;
+                    margin-right: 20px;
                 } 
             display:flex; 
             background-color:$color-frequent;
@@ -671,8 +671,9 @@ body {
                             margin-right:0;
                         & > .menu-step_comments-field_price-selection-field_selection {
                                 opacity:1;
+                                transition:opacity 2000ms 50ms;
                                 & > .check-icon {
-                                    animation:rotation-three-quarters 1000ms 150ms;
+                                    animation:rotation-three-quarters 2000ms 150ms;
                                     color:$color-tertiary;
                                     background-color:$color-frequent;
                                     background-clip: text;
