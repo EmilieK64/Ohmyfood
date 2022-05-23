@@ -652,7 +652,7 @@ main {
     color:grey;
     position:relative;
     font-size:20px; 
-    padding-left:44px;
+    padding-left:34px;
     &::after {
     background-color: #99E2D0;
     height: 3px;
@@ -660,7 +660,7 @@ main {
     content: "";
     position: absolute;
     top: 23px;
-    left: 44px;
+    left: 34px;
     }
 } 
     &_comments {
@@ -668,10 +668,12 @@ main {
         flex-direction: column;
         justify-content: space-between;
         height:300px;
-        padding-left:10%;
-        width:94%;
+        padding-left:6%;
+        width:100%;
         @include intermediate-screen {
             flex-direction: column;
+            padding-left:10%;
+            width:96%;
         }     
             &_field {     
                 @include steps;
