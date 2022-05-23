@@ -987,6 +987,11 @@ main {
     margin-right: 20px;
   }
 }
+@media screen and (min-width: 1277px) {
+  .menu-step_comments-field {
+    width: 320px;
+  }
+}
 .menu-step_comments-field:active > .menu-step_comments-field_price-selection-field {
   margin-right: 0;
 }

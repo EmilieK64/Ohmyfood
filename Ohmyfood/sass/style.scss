@@ -666,6 +666,9 @@ main {
                     width:276px;
                     margin-right: 20px;
                 } 
+                @include large-screen {
+                    width:320px;
+                } 
             display:flex; 
             background-color:$color-frequent;
             align-items: center;
