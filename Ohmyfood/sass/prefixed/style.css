@@ -447,6 +447,14 @@ body {
   background-color: #FFFFFF;
   word-wrap: break-word;
   font-family: Roboto, sans-serif;
+  display: flex;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .welcome-page-heading {
@@ -708,9 +716,6 @@ body {
   margin-left: -10px;
   margin-right: 0;
 }
-.steps-field_number-place_icon {
-  font-weight: 10px;
-}
 .steps-field_image-place {
   margin-left: 20px;
   margin-right: 20px;
@@ -722,6 +727,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-bottom: 30px;
 }
 .restaurants_card {
   box-shadow: 4px 3px 8px #aaaaaa;
@@ -760,8 +766,6 @@ body {
   background-color: #99E2D0;
   text-align: center;
   align-self: baseline;
-  position: abolute;
-  top: 20px;
   position: absolute;
   top: 0px;
   right: 16px;
@@ -809,11 +813,16 @@ body {
   -webkit-background-clip: text;
   opacity: 0;
   transition: all 1500ms ease-in-out;
-  scale: 1;
 }
-.fas-heart:hover {
+.fas-heart:active {
   opacity: 1;
-  transform: scale(1.1);
+  transform: scale(1.1, 1.1);
+}
+@media screen and (min-width: 1100px) {
+  .fas-heart:hover {
+    opacity: 1;
+    transform: scale(1.1, 1.1);
+  }
 }
 
 .far-heart {
@@ -823,13 +832,13 @@ body {
 .footer {
   background-color: black;
   color: #FFFFFF;
-  padding-left: 30px;
 }
 .footer_logo {
   color: #FFFFFF;
   font-family: Shrikhand, sans-serif;
   font-size: 20px;
   margin-bottom: 15px;
+  padding-left: 30px;
 }
 .footer_field {
   flex-direction: column;
@@ -848,6 +857,7 @@ body {
 }
 .footer_field_for-information_link {
   color: #FFFFFF;
+  padding-left: 30px;
 }
 .footer_field_for-information_link_icone-place {
   margin-left: 0;
@@ -897,8 +907,10 @@ body {
 
 .menu-form {
   display: flex;
-  width: 80%;
+  width: 100%;
   justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 
 @keyframes opacity-effect {
@@ -925,7 +937,7 @@ body {
     flex-direction: row;
     height: 80px;
     width: 90%;
-    margin-right: 179px;
+    margin-right: 10%;
   }
 }
 .menu-step--1 {
@@ -975,20 +987,37 @@ body {
     margin-right: 20px;
   }
 }
-.menu-step_comments-field:hover > .menu-step_comments-field_price-selection-field {
+.menu-step_comments-field:active > .menu-step_comments-field_price-selection-field {
   margin-right: 0;
 }
-.menu-step_comments-field:hover > .menu-step_comments-field_price-selection-field > .menu-step_comments-field_price-selection-field_selection {
+.menu-step_comments-field:active > .menu-step_comments-field_price-selection-field > .menu-step_comments-field_price-selection-field_selection {
   opacity: 1;
   transition: opacity 2000ms 50ms;
 }
-.menu-step_comments-field:hover > .menu-step_comments-field_price-selection-field > .menu-step_comments-field_price-selection-field_selection > .check-icon {
+.menu-step_comments-field:active > .menu-step_comments-field_price-selection-field > .menu-step_comments-field_price-selection-field_selection > .check-icon {
   animation: rotation-three-quarters 2000ms 150ms;
-  color: #99E2D0;
-  background-color: #FFFFFF;
+  background-color: #99E2D0;
+  color: #FFFFFF;
   background-clip: text;
-  flex-shrink: 0;
+  -webkit-background-clip: text;
   border-radius: 25px 25px 25px 25px;
+}
+@media screen and (min-width: 768px) {
+  .menu-step_comments-field:hover > .menu-step_comments-field_price-selection-field {
+    margin-right: 0;
+  }
+  .menu-step_comments-field:hover > .menu-step_comments-field_price-selection-field > .menu-step_comments-field_price-selection-field_selection {
+    opacity: 1;
+    transition: opacity 2000ms 50ms;
+  }
+  .menu-step_comments-field:hover > .menu-step_comments-field_price-selection-field > .menu-step_comments-field_price-selection-field_selection > .check-icon {
+    animation: rotation-three-quarters 2000ms 150ms;
+    background-color: #99E2D0;
+    color: #FFFFFF;
+    background-clip: text;
+    -webkit-background-clip: text;
+    border-radius: 25px 25px 25px 25px;
+  }
 }
 .menu-step_comments-field_details {
   display: flex;

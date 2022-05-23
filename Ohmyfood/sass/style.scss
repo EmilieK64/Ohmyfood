@@ -189,7 +189,14 @@ body {
     background-color:$color-frequent;
     word-wrap: break-word;
     font-family: Roboto, sans-serif;
+    display:flex;
+    width:100%;
     }
+main {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
         
 .welcome-page-heading {
     font-size : 27px;
@@ -288,7 +295,6 @@ body {
                 align-items: flex-start;
                 border: 1px solid $color-text-secondary;
                 height:46px;
-
             }
             &:focus {
                 outline:none;
@@ -347,11 +353,9 @@ body {
             border-radius: $border-radius-secondary;
         }
 }
-
 .btn--welcome-page {
     @include medium-screen {
         display:none;
-        
      }
 }
 .btn--welcome-page-responsive {
@@ -364,8 +368,7 @@ body {
                     border-radius: 0px 25px 25px 0px;
                 }
         }
-     }
-
+}
 .website-running-information {
     background-color: $color-frequent;
     flex-wrap: wrap;
@@ -418,9 +421,6 @@ body {
         text-align: center;
         margin-left:-10px;
         margin-right: 0;
-        &_icon {
-            font-weight:10px;
-        }
     }
     &_image-place {
         margin-left:$size-frequent;
@@ -433,7 +433,7 @@ body {
     display: flex;
     flex-wrap:wrap;
     justify-content: space-around;
-    
+    margin-bottom:30px;
     &_card {
         box-shadow:$box-shadow-primary;
         border-radius: $border-radius-primary;
@@ -467,8 +467,6 @@ body {
                     background-color:$color-tertiary;
                     text-align: center;
                     align-self:baseline;
-                    position:abolute;
-                    top:20px;
                     position:absolute;
                     top: 0px;
                     right: 16px;
@@ -516,24 +514,30 @@ body {
         -webkit-background-clip:text;
         opacity:0;
         transition:all 1500ms ease-in-out;
-        scale:1;
-        &:hover {
+        // scale:1;
+        &:active {
             opacity:1;
-            transform: scale(1.1);
+            transform: scale(1.1, 1.1);
         }
-    }
-    .far-heart {
-        color:darken($color-frames-secondary,10%);
-    }
+        @include intermediate-screen {
+            &:hover {
+                opacity:1;
+                transform: scale(1.1, 1.1);
+            }
+       }
+ }
+.far-heart {
+    color:darken($color-frames-secondary,10%);
+}
 .footer {
     background-color:$color-text-primary;
     color:$color-frequent;
-    padding-left:30px;
     &_logo {
         color:$color-frequent;
         font-family:Shrikhand, sans-serif;
         font-size: 20px;
         margin-bottom:15px;
+        padding-left:30px;
     }
     &_field {
         flex-direction: column;
@@ -542,14 +546,14 @@ body {
             flex-direction: row;
             justify-content: space-between;
             margin-right:141px;
+            
         }
         &_for-information {
         display:flex;
         color:white; 
-        
             &_link {
-               
                 color:$color-frequent;
+                padding-left:30px;
                 &_icone-place {
                     margin-left:0;
                     margin-right:10px;
@@ -601,8 +605,11 @@ body {
      }
 .menu-form {
         display: flex;
-        width:80%;
+        width:100%;
         justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        
     }
      $numb-menu-steps:3;
      $anim-duration:300ms;
@@ -629,9 +636,8 @@ body {
         flex-direction: row;
         height: 80px;
         width: 90%;
-        margin-right: 179px;
+        margin-right: 10%;
     }
-    
     @for $i from 1 through $numb-menu-steps {
         &--#{$i} {
             animation-delay:$anim-delay * $i;
@@ -666,7 +672,7 @@ body {
             flex-direction:row;
             width:80%;
             cursor:pointer;
-                &:hover{
+                &:active {
                     & > .menu-step_comments-field_price-selection-field {
                             margin-right:0;
                         & > .menu-step_comments-field_price-selection-field_selection {
@@ -674,14 +680,34 @@ body {
                                 transition:opacity 2000ms 50ms;
                                 & > .check-icon {
                                     animation:rotation-three-quarters 2000ms 150ms;
-                                    color:$color-tertiary;
-                                    background-color:$color-frequent;
+                                    background-color:$color-tertiary;
+                                    color:$color-frequent;
                                     background-clip: text;
-                                    flex-shrink:0;
+                                    -webkit-background-clip: text;
                                     border-radius: $border-radius-secondary;
                                 }
                         } 
                     }
+                }
+                @include medium-screen {
+                    &:hover {
+                        & > .menu-step_comments-field_price-selection-field {
+                            margin-right:0;
+                        & > .menu-step_comments-field_price-selection-field_selection {
+                                opacity:1;
+                                transition:opacity 2000ms 50ms;
+                                & > .check-icon {
+                                    animation:rotation-three-quarters 2000ms 150ms;
+                                    background-color:$color-tertiary;
+                                    color:$color-frequent;
+                                    background-clip: text;
+                                    -webkit-background-clip: text;
+                                    border-radius: $border-radius-secondary;
+                                }
+                            } 
+                        }
+                    }
+         
                 }
             &_details {
                 display:flex;
