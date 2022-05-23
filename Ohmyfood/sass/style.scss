@@ -230,11 +230,14 @@ main {
     background-color: $color-frequent;
     width: 100%;
     &_link-field-on-logo {
-        font-size: 10px;
-        margin:auto;
-        margin-top:10px;
-        margin-bottom:10px;
-        }
+        margin: auto;
+        height: 50px;
+        display: flex;
+        align-items: center;
+       &--restaurant-page {
+            padding-left:90px;
+       }
+    }
     &_link-field-on-arrow {
         margin:20px -128px 20px 20px;
        height: 22px;
@@ -609,7 +612,11 @@ main {
         justify-content: space-around;
         flex-direction: column;
         align-items: center;
-        
+        @include intermediate-screen {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+         }
     }
      $numb-menu-steps:3;
      $anim-duration:300ms;
@@ -627,17 +634,12 @@ main {
     flex-direction: column;
     height:310px;
     width:440px;
-    margin-left:90px;
     margin-bottom: 40px;
     opacity:0;
     animation:opacity-effect 2000ms forwards;
     justify-content: space-between;
-    @include intermediate-screen {
-        flex-direction: row;
-        height: 80px;
-        width: 90%;
-        margin-right: 10%;
-    }
+    
+        
     @for $i from 1 through $numb-menu-steps {
         &--#{$i} {
             animation-delay:$anim-delay * $i;
@@ -647,121 +649,131 @@ main {
     color:grey;
     position:relative;
     font-size:20px; 
-    @include intermediate-screen {
-        width: 150px;
-    }
+    padding-left:44px;
     &::after {
-        background-color:$color-tertiary;
-        height:5px;
-        width:40px;
-        content:"";
-        position:absolute;
-        top:23px;
-        left:0;
-        }
-    }      
-        &_comments-field {     
-            @include steps;
-            @include intermediate-screen {
-                    width:276px;
-                    margin-right: 20px;
-                } 
-                @include large-screen {
-                    width:320px;
-                } 
-            display:flex; 
-            background-color:$color-frequent;
-            align-items: center;
-            flex-direction:row;
-            width:80%;
-            cursor:pointer;
-                &:active {
-                    & > .menu-step_comments-field_price-selection-field {
-                            margin-right:0;
-                        & > .menu-step_comments-field_price-selection-field_selection {
-                                opacity:1;
-                                transition:opacity 2000ms 50ms;
-                                & > .check-icon {
-                                    animation:rotation-three-quarters 2000ms 150ms;
-                                    background-color:$color-tertiary;
-                                    color:$color-frequent;
-                                    background-clip: text;
-                                    -webkit-background-clip: text;
-                                    border-radius: $border-radius-secondary;
-                                }
-                        } 
-                    }
-                }
-                @include medium-screen {
-                    &:hover {
-                        & > .menu-step_comments-field_price-selection-field {
-                            margin-right:0;
-                        & > .menu-step_comments-field_price-selection-field_selection {
-                                opacity:1;
-                                transition:opacity 2000ms 50ms;
-                                & > .check-icon {
-                                    animation:rotation-three-quarters 2000ms 150ms;
-                                    background-color:$color-tertiary;
-                                    color:$color-frequent;
-                                    background-clip: text;
-                                    -webkit-background-clip: text;
-                                    border-radius: $border-radius-secondary;
-                                }
-                            } 
+    background-color: #99E2D0;
+    height: 3px;
+    width: 40px;
+    content: "";
+    position: absolute;
+    top: 23px;
+    left: 44px;
+    }
+} 
+    &_comments {
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height:300px;
+        padding-left:10%;
+        width:94%;
+        @include intermediate-screen {
+            flex-direction: column;
+        }     
+            &_field {     
+                @include steps;
+                @include intermediate-screen {
+                        width:276px;
+                        margin-right: 20px;
+                    } 
+                    @include large-screen {
+                        width:320px;
+                    } 
+                display:flex; 
+                background-color:$color-frequent;
+                align-items: center;
+                flex-direction:row;
+                width:86%;
+                cursor:pointer;
+                    &:active {
+                        & > .menu-step_comments_field_price-selection-field {
+                                margin-right:0;
+                            & > .menu-step_comments_field_price-selection-field_selection {
+                                    opacity:1;
+                                    transition:opacity 2000ms 50ms;
+                                    & > .check-icon {
+                                        animation:rotation-three-quarters 2000ms 150ms;
+                                        background-color:$color-tertiary;
+                                        color:$color-frequent;
+                                        background-clip: text;
+                                        -webkit-background-clip: text;
+                                        border-radius: $border-radius-secondary;
+                                    }
+                                } 
                         }
                     }
-         
-                }
-            &_details {
-                display:flex;
-                flex-direction: column;
-                width:100%;
-                overflow:hidden;
-                &_name{ 
-                    font-size:$font-size-primary*1.1;
-                    font-weight:bold;
-                    margin-bottom:0;
+                    @include medium-screen {
+                        &:hover {
+                            & > .menu-step_comments_field_price-selection-field {
+                                margin-right:0;
+                            & > .menu-step_comments_field_price-selection-field_selection {
+                                    opacity:1;
+                                    transition:opacity 2000ms 50ms;
+                                    & > .check-icon {
+                                        animation:rotation-three-quarters 2000ms 150ms;
+                                        background-color:$color-tertiary;
+                                        color:$color-frequent;
+                                        background-clip: text;
+                                        -webkit-background-clip: text;
+                                        border-radius: $border-radius-secondary;
+                                    }
+                                } 
+                            }
+                        }
+            
+                    }
+                &_details {
+                    display:flex;
+                    flex-direction: column;
+                    width:100%;
                     overflow:hidden;
-                    text-overflow:ellipsis;
-                    white-space:nowrap;
+                    &_name{ 
+                        font-size:$font-size-primary*1.1;
+                        font-weight:bold;
+                        margin-bottom:0;
+                        overflow:hidden;
+                        text-overflow:ellipsis;
+                        white-space:nowrap;
+                    }
+                    &_additionnal-information {
+                        font-size:$font-size-secondary;
+                        margin-top:5px;
+                        overflow:hidden;
+                        text-overflow:ellipsis;
+                        white-space:nowrap;
+                    }
                 }
-                &_additionnal-information {
-                    font-size:$font-size-secondary;
-                    margin-top:5px;
-                    overflow:hidden;
-                    text-overflow:ellipsis;
-                    white-space:nowrap;
-                }
-            }
-            &_price-selection-field {
-                display:flex;
-                margin-left:0px;
-                width:110px;
-                height:100%;
-                align-items:flex-end;
-                border-radius:0px 20px 20px 0px;
-                margin-right:-53px;
-                justify-content:flex-end;
-                &_price {
+                &_price-selection-field {
+                    display:flex;
+                    margin-left:0px;
+                    width:110px;
+                    height:100%;
+                    align-items:flex-end;
+                    border-radius:0px 20px 20px 0px;
+                    margin-right:-53px;
+                    justify-content:flex-end;
+                    &_price {
+                        display:flex;
+                        align-items: center;
+                        justify-content: center;
+                        height:100%;
+                        width:55px;
+                    }
+                &_selection {
+                    height:100%;
+                    background-color:#99E2D0;
+                    width:55px;
+                    border-radius:0px 20px 20px 0px;
                     display:flex;
                     align-items: center;
                     justify-content: center;
-                    height:100%;
-                    width:55px;
+                    opacity:0;
+                    } 
                 }
-            &_selection {
-                height:100%;
-                background-color:#99E2D0;
-                width:55px;
-                border-radius:0px 20px 20px 0px;
-                display:flex;
-                align-items: center;
-                justify-content: center;
-                opacity:0;
-                } 
-            }
-        } 
+            } 
+        }
     }
+    
         @keyframes rotation-three-quarters {
             from {
                 transform:rotate(270deg);
