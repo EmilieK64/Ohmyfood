@@ -200,8 +200,8 @@ main {
         
 .welcome-page-heading {
     font-size : 27px;
-    margin-right:5%;
-    margin-left:5%;
+    padding-right:5%;
+    padding-left:5%;
             &--centered {
                 text-align: center;
             
@@ -341,6 +341,9 @@ main {
     box-shadow:$box-shadow-primary;
     position:relative;
     z-index:1;
+    @include intermediate-screen {
+        margin-right:15px;
+    }
         &:hover {
             &::after {
             opacity:1;
@@ -376,7 +379,7 @@ main {
     background-color: $color-frequent;
     flex-wrap: wrap;
     &_fields{
-        height:250px;
+        height:300px;
         margin-bottom: 30px;
         align-items: center;
         flex-wrap: wrap;
@@ -389,7 +392,7 @@ main {
 .steps-field {
     @include steps;
     background-color:$color-frames-primary;
-    font-size:$font-size-primary*0.9; 
+    font-size:$font-size-primary; 
     width:400px;
     align-items: center;
     flex-wrap: wrap;
