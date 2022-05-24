@@ -16,6 +16,7 @@
         &_menu {
             align-items: center;
             flex-direction:column;
+            width:100%;
             @include intermediate-screen {
                 align-items: center;
             }
@@ -43,6 +44,7 @@
         align-items: center;
         @include intermediate-screen {
             margin-bottom:66px;
+            width:100%;
         }
         @include intermediate-screen {
             flex-direction: row;
@@ -119,6 +121,7 @@
                             & > .menu-step_comments_field_price-selection-field_selection {
                                     opacity:1;
                                     transition:opacity 1000ms 50ms;
+                                    width:55px;
                                     & > .check-icon {
                                         animation:rotation-three-quarters 1000ms 150ms;
                                         background-color:$color-tertiary;
@@ -191,7 +194,6 @@
                     height:100%;
                     align-items:flex-end;
                     border-radius:0px 20px 20px 0px;
-                    margin-right:-53px;
                     justify-content:flex-end;
                     &_price {
                         display:flex;
@@ -207,7 +209,6 @@
                 &_selection {
                     height:100%;
                     background-color:#99E2D0;
-                    width:55px;
                     border-radius:0px 20px 20px 0px;
                     display:flex;
                     align-items: center;
