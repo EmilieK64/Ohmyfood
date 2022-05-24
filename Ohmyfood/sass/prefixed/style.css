@@ -989,7 +989,6 @@ template {
   .menu-step_comments {
     flex-direction: column;
     padding-left: 10%;
-    width: 96%;
   }
 }
 .menu-step_comments_field {
@@ -1004,7 +1003,7 @@ template {
   background-color: #FFFFFF;
   align-items: center;
   flex-direction: row;
-  width: 86%;
+  width: 90%;
   cursor: pointer;
 }
 @media screen and (min-width: 1100px) {
