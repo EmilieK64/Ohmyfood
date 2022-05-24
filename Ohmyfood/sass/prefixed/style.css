@@ -634,9 +634,8 @@ main {
   bottom: 0;
   left: 0;
   box-shadow: 2px 5px 10px #777777;
-  background: linear-gradient(#fface8, #ae80e5);
+  background: linear-gradient(to top, #fface8, #ae80e5);
   z-index: -1;
-  /*à quoi ça sert?*/
   opacity: 0;
   transition: opacity 2000ms;
   border-radius: 25px 25px 25px 25px;
@@ -685,6 +684,7 @@ main {
   box-shadow: 4px 3px 8px #aaaaaa;
   position: relative;
   z-index: 1;
+  color: black;
   background-color: #F6F6F6;
   font-size: 17px;
   width: 400px;
@@ -991,6 +991,7 @@ main {
   box-shadow: 4px 3px 8px #aaaaaa;
   position: relative;
   z-index: 1;
+  color: black;
   display: flex;
   background-color: #FFFFFF;
   align-items: center;

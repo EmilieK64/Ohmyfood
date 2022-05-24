@@ -3,9 +3,9 @@
 @import "./base/typography";
 
 @import "./utils/variables";
+@import "./utils/maps";
 @import "./utils/functions";
 @import "./utils/mixins";
-@import "./utils/extensions";
 @import "./utils/loops";
 
 @import "./layout/header";
@@ -48,7 +48,14 @@ $breakpoints: (
     border-radius: $border-radius-primary;
     box-shadow:$box-shadow-primary;
     position:relative;
-    z-index:1; 
+    z-index:1;  
+    @debug lightness($color-frames-primary);
+    @debug lightness($color-frequent);
+    @if ((lightness($color-frames-primary) >= 80%) or (lightness($color-frequent)>= 80% )) {
+        color:$color-text-primary;
+    } @else {
+        color:$color-frequent;
+    }
 }
 @mixin pseudo-element {
         content: "";
@@ -352,8 +359,8 @@ main {
         &::after {
             @include pseudo-element;
             box-shadow: $box-shadow-secondary;
-            background:linear-gradient(lighten($color-secondary,10%), lighten($color-primary, 10%));
-            z-index:-1; /*à quoi ça sert?*/
+            background:linear-gradient(to top, lighten($color-secondary,10%), lighten($color-primary, 10%));
+            z-index:-1; 
             opacity:0;
             transition: opacity 2000ms;
             border-radius: $border-radius-secondary;
@@ -371,8 +378,8 @@ main {
         margin: 10px 0px 10px 0px;
         border-radius: 0px 25px 25px 0px;
                 &::after {
-                    border-radius: 0px 25px 25px 0px;
-                }
+                border-radius: 0px 25px 25px 0px;
+            }
         }
 }
 .website-running-information {
