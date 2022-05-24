@@ -16,7 +16,6 @@
         &_menu {
             align-items: center;
             flex-direction:column;
-            width:100%;
             @include intermediate-screen {
                 align-items: center;
             }
@@ -39,7 +38,6 @@
 }
 .menu-form {
         display: flex;
-        width:100%;
         justify-content: space-around;
         flex-direction: column;
         align-items: center;
@@ -55,7 +53,7 @@
 .menu-step {
     display: flex;
     flex-direction: column;
-    height:310px;
+    // height:310px;
     width:440px;
     margin-bottom: 40px;
     opacity:0;
@@ -85,7 +83,7 @@
         display:flex;
         flex-direction: column;
         justify-content: space-between;
-        height:300px;
+        // height:300px;
         padding-left:6%;
         width:100%;
         @include intermediate-screen {
@@ -95,6 +93,7 @@
         }     
             &_field {     
                 @include steps;
+                margin-bottom:16px;
                 @include intermediate-screen {
                     width:276px;
                     margin-right: 82px;
