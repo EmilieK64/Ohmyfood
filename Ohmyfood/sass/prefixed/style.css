@@ -1032,7 +1032,6 @@ template {
 .menu-step_comments_field:active > .menu-step_comments_field_price-selection-field > .menu-step_comments_field_price-selection-field_selection {
   opacity: 1;
   transition: opacity 1000ms 50ms;
-  width: 55px;
 }
 .menu-step_comments_field:active > .menu-step_comments_field_price-selection-field > .menu-step_comments_field_price-selection-field_selection > .check-icon {
   animation: rotation-three-quarters 1000ms 150ms;
@@ -1104,6 +1103,7 @@ template {
   height: 100%;
   align-items: flex-end;
   border-radius: 0px 20px 20px 0px;
+  margin-right: -53px;
   justify-content: flex-end;
 }
 .menu-step_comments_field_price-selection-field_price {
@@ -1120,6 +1120,7 @@ template {
   }
 }
 .menu-step_comments_field_price-selection-field_selection {
+  width: 55px;
   height: 100%;
   background-color: #99E2D0;
   border-radius: 0px 20px 20px 0px;
