@@ -672,7 +672,7 @@ template {
 }
 @media screen and (min-width: 1100px) {
   .btn {
-    margin-right: 15px;
+    margin-right: 7px;
   }
 }
 .btn:hover::after {
@@ -934,6 +934,11 @@ template {
 }
 @media screen and (min-width: 1100px) {
   .menu-form {
+    margin-bottom: 66px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .menu-form {
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -1006,6 +1011,14 @@ template {
 @media screen and (min-width: 1100px) {
   .menu-step_comments_field {
     width: 276px;
+    margin-right: 82px;
+    margin-bottom: 20px;
+    height: 90px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .menu-step_comments_field {
+    width: 276px;
     margin-right: 20px;
   }
 }
@@ -1019,10 +1032,10 @@ template {
 }
 .menu-step_comments_field:active > .menu-step_comments_field_price-selection-field > .menu-step_comments_field_price-selection-field_selection {
   opacity: 1;
-  transition: opacity 2000ms 50ms;
+  transition: opacity 1000ms 50ms;
 }
 .menu-step_comments_field:active > .menu-step_comments_field_price-selection-field > .menu-step_comments_field_price-selection-field_selection > .check-icon {
-  animation: rotation-three-quarters 2000ms 150ms;
+  animation: rotation-three-quarters 1000ms 150ms;
   background-color: #99E2D0;
   color: #FFFFFF;
   background-clip: text;
@@ -1035,10 +1048,10 @@ template {
   }
   .menu-step_comments_field:hover > .menu-step_comments_field_price-selection-field > .menu-step_comments_field_price-selection-field_selection {
     opacity: 1;
-    transition: opacity 2000ms 50ms;
+    transition: opacity 1000ms 50ms;
   }
   .menu-step_comments_field:hover > .menu-step_comments_field_price-selection-field > .menu-step_comments_field_price-selection-field_selection > .check-icon {
-    animation: rotation-three-quarters 2000ms 150ms;
+    animation: rotation-three-quarters 1000ms 150ms;
     background-color: #99E2D0;
     color: #FFFFFF;
     background-clip: text;
@@ -1051,6 +1064,8 @@ template {
   flex-direction: column;
   width: 100%;
   overflow: hidden;
+  padding-left: 10px;
+  height: 100px;
 }
 .menu-step_comments_field_details_name {
   font-size: 18.7px;
@@ -1059,6 +1074,14 @@ template {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-top: 30px;
+}
+@media screen and (min-width: 1100px) {
+  .menu-step_comments_field_details_name {
+    white-space: normal;
+    height: 45px;
+    margin-top: 10px;
+  }
 }
 .menu-step_comments_field_details_additionnal-information {
   font-size: 15px;
@@ -1066,6 +1089,13 @@ template {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+@media screen and (min-width: 1100px) {
+  .menu-step_comments_field_details_additionnal-information {
+    white-space: normal;
+    height: 40px;
+    margin-bottom: 10px;
+  }
 }
 .menu-step_comments_field_price-selection-field {
   display: flex;
@@ -1079,10 +1109,16 @@ template {
 }
 .menu-step_comments_field_price-selection-field_price {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   height: 100%;
   width: 55px;
+  padding-bottom: 10px;
+}
+@media screen and (min-width: 1100px) {
+  .menu-step_comments_field_price-selection-field_price {
+    padding-bottom: 20px;
+  }
 }
 .menu-step_comments_field_price-selection-field_selection {
   height: 100%;

@@ -15,7 +15,7 @@
     position:relative;
     z-index:1;
     @include intermediate-screen {
-        margin-right:15px;
+        margin-right:7px;
     }
         &:hover {
             &::after {
