@@ -1,0 +1,43 @@
+@mixin fa-martini-glass-citrus {
+    font-size:50px;
+    font-weight:bold;
+    color: #99E2D0;
+}
+
+@mixin steps {
+    height:70px;
+    border-radius: $border-radius-primary;
+    box-shadow:$box-shadow-primary;
+    position:relative;
+    z-index:1;  
+    @debug lightness($color-frames-primary);
+    @debug lightness($color-frequent);
+    @if ((lightness($color-frames-primary) >= 80%) or (lightness($color-frequent)>= 80% )) {
+        color:$color-text-primary;
+    } @else {
+        color:$color-frequent;
+    }
+}
+@mixin pseudo-element {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+}
+@mixin medium-screen {
+    @media screen and (min-width: map-get($breakpoints, medium-screen)) {
+    @content;
+    }
+}
+@mixin intermediate-screen {
+    @media screen and (min-width: map-get($breakpoints, intermediate-screen)) {
+    @content;
+    }
+}
+@mixin large-screen {
+    @media screen and (min-width: map-get($breakpoints, large-screen)) {
+    @content;
+    }
+}

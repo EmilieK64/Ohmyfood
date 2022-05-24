@@ -1,0 +1,69 @@
+.restaurants { 
+    align-items:center;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    margin-bottom:30px;
+    &_card {
+        box-shadow:$box-shadow-primary;
+        border-radius: $border-radius-primary;
+        margin-bottom: 30px;
+        height:300px;
+        width:400px;
+        &:hover {
+            transition:transform 300ms;
+            transform:scale(1.05);
+            box-shadow:$box-shadow-secondary;
+        }
+        @include medium-screen {
+            margin-left:30px;
+        }
+            &_link-field {
+                width:100%;
+                height:77%;
+                flex-direction: column;
+                text-decoration:none;
+                color:$color-text-primary;
+                position:relative;
+                align-self: center;
+                &_image {
+                    object-fit:cover;
+                    height:100%;
+                    border-radius: $border-radius-tertiary;
+                    } 
+                &_frame-for-new-information {
+                    width:30%;
+                    padding:5px 0px 5px 0px;
+                    background-color:$color-tertiary;
+                    text-align: center;
+                    align-self:baseline;
+                    position:absolute;
+                    top: 0px;
+                    right: 16px;
+                    }   
+                &_comments {
+                    display:flex;
+                    align-self:flex-start;
+                    &_field {
+                        width:80%;
+                        margin-left:10px;
+                        display:flex;
+                        flex-direction:column;
+                        &_link-for-comments {
+                            flex-direction:column;
+                            color:$color-text-primary;
+                            &_restaurant-name {
+                                font-size:$font-size-primary;
+                                font-weight:bold;
+                                margin-bottom:0;
+                            }
+                            &_restaurant-location-name {
+                                font-size:$font-size-secondary;
+                                margin-top:5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }

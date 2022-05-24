@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    background-color: $color-frequent;
+    width: 100%;
+    &_link-field-on-logo {
+        margin: auto;
+        height: 50px;
+        display: flex;
+        align-items: center;
+       &--restaurant-page {
+            padding-left:90px;
+       }
+    }
+    &_link-field-on-arrow {
+        margin:20px -128px 20px 20px;
+       height: 22px;
+       font-size:$size-frequent;
+       width:$size-frequent;
+       color:$color-text-primary;
+    }
+}

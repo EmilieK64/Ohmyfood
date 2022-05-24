@@ -1,0 +1,32 @@
+.footer {
+    background-color:$color-text-primary;
+    color:$color-frequent;
+    &_logo {
+        color:$color-frequent;
+        font-family:Shrikhand, sans-serif;
+        font-size: 20px;
+        margin-bottom:15px;
+        padding-left:30px;
+    }
+    &_field {
+        flex-direction: column;
+        padding-bottom:26px;
+        @include medium-screen {
+            flex-direction: row;
+            justify-content: space-between;
+            margin-right:141px;
+        }
+        &_for-information {
+        display:flex;
+        color:white; 
+            &_link {
+                color:$color-frequent;
+                padding-left:30px;
+                &_icone-place {
+                    margin-left:0;
+                    margin-right:10px;
+                }
+            }
+        }
+    } 
+}

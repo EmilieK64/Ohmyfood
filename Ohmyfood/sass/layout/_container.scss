@@ -1,0 +1,13 @@
+.section {
+    display: flex;
+    width: 100%;
+    background-color:$color-frames-primary;
+    flex-direction: column;
+}
+.section > div  {
+    display:flex;
+    
+}
+.section > div > div {
+    display:flex; 
+}

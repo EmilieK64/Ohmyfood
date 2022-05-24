@@ -1,0 +1,59 @@
+.form {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    @include medium-screen {
+        background-color:$color-frequent;
+    }
+    &_location-field {
+        display:flex;
+        background-color:$color-frames-secondary;/*vérifier que l-syntaxe ok*/
+        justify-content:center;
+        width:100%;
+        margin-bottom:10px;
+        @include medium-screen {
+            order:2;
+            align-self: flex-end;
+            background-color:$color-primary;
+        }
+    }
+    &_location-text {
+            background-color: $color-frames-secondary;/*vérifier que la syntaxe ok*/
+            font-size: $font-size-primary;
+            border:none;
+            margin-top:10px;
+            @include medium-screen {
+                display:flex;
+                text-align: center;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                border: 1px solid $color-text-secondary;
+                height:46px;
+            }
+            &:focus {
+                outline:none;
+            }
+    }
+    &_information {
+        margin:auto;
+        width:85%;
+        @include medium-screen {
+            order:1;
+            background-color: $color-frames-primary;
+            width:100%;
+            & > .welcome-page-heading--centered {
+                @include medium-screen {
+                  margin-right:0;
+                }
+            }
+        }
+            &_subtitle {
+            font-size : $size-frequent;
+            color:$color-text-secondary;
+                &--centered {
+                    text-align: center;
+            }
+        }
+    }
+} 

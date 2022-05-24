@@ -1,0 +1,195 @@
+.restaurant {    
+    &_image-place {
+       height:300px;
+        width:100%;
+        margin-bottom:-20px;
+            &_image {
+                object-fit:cover;
+                height:100%; 
+                width:100%;
+            } 
+    }
+    &_presentation {
+        align-items: center;
+        border-radius:$border-radius-tertiary;
+        background-color: $color-frequent;
+        &_menu {
+            align-items: center;
+            flex-direction:column;
+            width:100%;
+            @include intermediate-screen {
+                align-items: center;
+            }
+            &_heading-place {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                width:400px;
+                &_heading {
+                    font-family:Shrikhand, sans-serif;
+                    width:100%;
+                    }
+                &_heart {
+                    display: flex;
+                    width:60px;
+                }
+            }
+        }
+    }
+}
+.menu-form {
+        display: flex;
+        width:100%;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        @include intermediate-screen {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+}
+.menu-step {
+    display: flex;
+    flex-direction: column;
+    height:310px;
+    width:440px;
+    margin-bottom: 40px;
+    opacity:0;
+    animation:opacity-effect 2000ms forwards;
+    justify-content: space-between;
+    @for $i from 1 through $numb-menu-steps {
+        &--#{$i} {
+            animation-delay:$anim-delay * $i;
+        }
+    }
+    &_heading {
+    color:grey;
+    position:relative;
+    font-size:20px; 
+    padding-left:34px;
+    &::after {
+    background-color: #99E2D0;
+    height: 3px;
+    width: 40px;
+    content: "";
+    position: absolute;
+    top: 23px;
+    left: 34px;
+    }
+} 
+    &_comments {
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height:300px;
+        padding-left:6%;
+        width:100%;
+        @include intermediate-screen {
+            flex-direction: column;
+            padding-left:10%;
+            width:96%;
+        }     
+            &_field {     
+                @include steps;
+                @include intermediate-screen {
+                        width:276px;
+                        margin-right: 20px;
+                    } 
+                    @include large-screen {
+                        width:320px;
+                    } 
+                display:flex; 
+                background-color:$color-frequent;
+                align-items: center;
+                flex-direction:row;
+                width:86%;
+                cursor:pointer;
+                    &:active {
+                        & > .menu-step_comments_field_price-selection-field {
+                                margin-right:0;
+                            & > .menu-step_comments_field_price-selection-field_selection {
+                                    opacity:1;
+                                    transition:opacity 2000ms 50ms;
+                                    & > .check-icon {
+                                        animation:rotation-three-quarters 2000ms 150ms;
+                                        background-color:$color-tertiary;
+                                        color:$color-frequent;
+                                        background-clip: text;
+                                        -webkit-background-clip: text;
+                                        border-radius: $border-radius-secondary;
+                                    }
+                                } 
+                        }
+                    }
+                    @include medium-screen {
+                        &:hover {
+                            & > .menu-step_comments_field_price-selection-field {
+                                margin-right:0;
+                            & > .menu-step_comments_field_price-selection-field_selection {
+                                    opacity:1;
+                                    transition:opacity 2000ms 50ms;
+                                    & > .check-icon {
+                                        animation:rotation-three-quarters 2000ms 150ms;
+                                        background-color:$color-tertiary;
+                                        color:$color-frequent;
+                                        background-clip: text;
+                                        -webkit-background-clip: text;
+                                        border-radius: $border-radius-secondary;
+                                    }
+                                } 
+                            }
+                        }
+            
+                    }
+                &_details {
+                    display:flex;
+                    flex-direction: column;
+                    width:100%;
+                    overflow:hidden;
+                    &_name{ 
+                        font-size:$font-size-primary*1.1;
+                        font-weight:bold;
+                        margin-bottom:0;
+                        overflow:hidden;
+                        text-overflow:ellipsis;
+                        white-space:nowrap;
+                    }
+                    &_additionnal-information {
+                        font-size:$font-size-secondary;
+                        margin-top:5px;
+                        overflow:hidden;
+                        text-overflow:ellipsis;
+                        white-space:nowrap;
+                    }
+                }
+                &_price-selection-field {
+                    display:flex;
+                    margin-left:0px;
+                    width:110px;
+                    height:100%;
+                    align-items:flex-end;
+                    border-radius:0px 20px 20px 0px;
+                    margin-right:-53px;
+                    justify-content:flex-end;
+                    &_price {
+                        display:flex;
+                        align-items: center;
+                        justify-content: center;
+                        height:100%;
+                        width:55px;
+                    }
+                &_selection {
+                    height:100%;
+                    background-color:#99E2D0;
+                    width:55px;
+                    border-radius:0px 20px 20px 0px;
+                    display:flex;
+                    align-items: center;
+                    justify-content: center;
+                    opacity:0;
+                    } 
+                }
+            } 
+        }
+    }

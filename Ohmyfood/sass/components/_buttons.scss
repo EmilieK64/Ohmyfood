@@ -1,0 +1,50 @@
+.btn {
+    cursor:pointer;  
+    margin-top:8px;
+    margin-bottom: 44px;
+    width: 245px;
+    height: 50px;
+    border-radius: $border-radius-secondary;
+    background:$color-gradient;
+    border:none;
+    color:$color-frequent;
+    align-items: center;
+    justify-content: center;
+    font-size:$font-size-primary;
+    box-shadow:$box-shadow-primary;
+    position:relative;
+    z-index:1;
+    @include intermediate-screen {
+        margin-right:15px;
+    }
+        &:hover {
+            &::after {
+            opacity:1;
+            } 
+        }
+        &::after {
+            @include pseudo-element;
+            box-shadow: $box-shadow-secondary;
+            background:linear-gradient(to top, lighten($color-secondary,10%), lighten($color-primary, 10%));
+            z-index:-1; 
+            opacity:0;
+            transition: opacity 2000ms;
+            border-radius: $border-radius-secondary;
+        }
+}
+.btn--welcome-page {
+    @include medium-screen {
+        display:none;
+     }
+}
+.btn--welcome-page-responsive {
+    display:none;
+    @include medium-screen {
+        display:flex;
+        margin: 10px 0px 10px 0px;
+        border-radius: 0px 25px 25px 0px;
+                &::after {
+                border-radius: 0px 25px 25px 0px;
+            }
+        }
+}

@@ -1,0 +1,116 @@
+.loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity:0.90;
+    background-color: $color-frequent;
+    animation: end-loader 4000ms both;
+    &::before {
+        position: absolute;
+        content: '';
+        display: block;
+        height: 150px;
+        width:200px;
+        border-radius: 30%;
+        border: 5px solid $color-secondary;
+        border-left-color:$color-primary;
+        border-right-color:$color-primary;
+    }
+    & > .fa-martini-glass-citrus--left {
+            font-size:50px;
+            font-weight:bold;
+            animation: loading-spinner-glass-toast 2000ms 100ms infinite linear ;
+            color: #99E2D0;  
+            animation-iteration-count: 2;
+    }
+        & > .fa-martini-glass-citrus--right {
+            @include fa-martini-glass-citrus;
+            animation: loading-spinner-glass-toast-reverse 2000ms 100ms infinite linear reverse;
+            animation-iteration-count: 2;
+    }    
+}
+.welcome-page-heading {
+    font-size : 27px;
+    padding-right:5%;
+    padding-left:5%;
+            &--centered {
+                text-align: center;
+            }
+}
+.icon-place { 
+    margin-right:$size-frequent;
+    margin-top: 26px;
+    @include medium-screen { 
+    background-color: $color-text-secondary;
+    border-radius:25px 0px 0px 25px;
+    height: 20px;
+    width: 44px;
+    margin-right: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    margin-top: 10px;
+    }
+}
+.website-running-information {
+    background-color: $color-frequent;
+    flex-wrap: wrap;
+    &_fields{
+        height:300px;
+        margin-bottom: 30px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        @include large-screen {
+        height: 95px;
+        }
+    }
+}
+.steps-field {
+    @include steps;
+    background-color:$color-frames-primary;
+    font-size:$font-size-primary; 
+    width:400px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0px 10px 0px 10px;
+    &:hover {
+        &::after {
+            opacity:0.3;
+        }
+        & > .steps-field_image-place { 
+            & > .steps-icon {
+                color:$color-primary;
+                opacity:0.5;
+                }
+        }    
+    }
+    &::after {
+        @include pseudo-element;
+        box-shadow: $box-shadow-secondary;
+        z-index:-1; 
+        opacity:0;
+        transition: opacity 2000ms;
+        border-radius: $border-radius-primary;
+        background-color:#FF79DA;
+    }
+    &_number-place {
+        background-color: $color-primary;
+        color:$color-frequent;
+        border-radius:$border-radius-secondary;
+        width:25px;
+        height:21px;
+        padding-top:4px;
+        text-align: center;
+        margin-left:-10px;
+        margin-right: 0;
+    }
+    &_image-place {
+        margin-left:$size-frequent;
+        margin-right:$size-frequent;
+        color:$color-text-secondary; 
+    }
+}
