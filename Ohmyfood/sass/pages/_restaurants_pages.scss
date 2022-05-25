@@ -55,7 +55,6 @@
 .menu-step {
     display: flex;
     flex-direction: column;
-    // height:310px;
     width:440px;
     margin-bottom: 40px;
     opacity:0;
@@ -85,14 +84,14 @@
         display:flex;
         flex-direction: column;
         justify-content: space-between;
-        // height:300px;
-        padding-left:6%;
+        align-items:center;
         width:100%;
         @include intermediate-screen {
             flex-direction: column;
             padding-left:10%;
+            align-items: flex-start;
         }     
-            &_field {     
+            &_field {    
                 @include steps;
                 margin-bottom:16px;
                 @include intermediate-screen {
@@ -100,14 +99,12 @@
                     margin-right: 82px;
                     margin-bottom: 20px;
                     height:90px;
+                    width:276px;
+                    margin-right: 20px;
                 } 
-                @include intermediate-screen {
-                        width:276px;
-                        margin-right: 20px;
-                    } 
-                    @include large-screen {
-                        width:320px;
-                    } 
+                @include large-screen {
+                    width:320px;
+                } 
                 display:flex; 
                 background-color:$color-frequent;
                 align-items: center;
