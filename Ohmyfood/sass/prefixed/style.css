@@ -1027,7 +1027,7 @@ template {
 }
 .menu-step_comments_field:active > .menu-step_comments_field_price-selection-field > .menu-step_comments_field_price-selection-field_selection {
   opacity: 1;
-  transition: opacity 1000ms 50ms;
+  transition: opacity 100ms;
 }
 .menu-step_comments_field:active > .menu-step_comments_field_price-selection-field > .menu-step_comments_field_price-selection-field_selection > .check-icon {
   animation: rotation-three-quarters 1000ms 150ms;

@@ -116,7 +116,7 @@
                                 margin-right:0;
                             & > .menu-step_comments_field_price-selection-field_selection {
                                     opacity:1;
-                                    transition:opacity 1000ms 50ms;
+                                    transition:opacity 100ms;
                                     & > .check-icon {
                                         animation:rotation-three-quarters 1000ms 150ms;
                                         background-color:$color-tertiary;
