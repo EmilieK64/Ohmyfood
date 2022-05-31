@@ -16,6 +16,11 @@
     z-index:1;
     @include intermediate-screen {
         margin-right:7px;
+        width:200px;
+    }
+    @include large-screen {
+        width:116px;
+        border-radius:$border-radius-primary;
     }
         &:hover {
             &::after {

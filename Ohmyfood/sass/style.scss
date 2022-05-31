@@ -6,7 +6,9 @@
 
 @import "./base/basis";
 @import "./base/normalize";
-@import "./base/typography";
+
+@import "./components/buttons";
+@import "./components/icons";
 
 @import "./layout/header";
 @import "./layout/container";
@@ -14,9 +16,6 @@
 @import "./layout/links";
 @import "./layout/footer";
 @import "./layout/navs";
-
-@import "./components/buttons";
-@import "./components/icons";
 
 @import "./pages/homepage";
 @import "./pages/restaurants_pages";

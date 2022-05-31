@@ -103,7 +103,7 @@
                     margin-right: 20px;
                 } 
                 @include large-screen {
-                    width:320px;
+                    width:344px;
                 } 
                 display:flex; 
                 background-color:$color-frequent;
@@ -116,13 +116,10 @@
                                 margin-right:0;
                             & > .menu-step_comments_field_price-selection-field_selection {
                                     opacity:1;
-                                    transition:opacity 100ms;
                                     & > .check-icon {
                                         animation:rotation-three-quarters 1000ms 150ms;
                                         background-color:$color-tertiary;
                                         color:$color-frequent;
-                                        background-clip: text;
-                                        -webkit-background-clip: text;
                                         border-radius: $border-radius-secondary;
                                     }
                                 } 
@@ -134,13 +131,10 @@
                                 margin-right:0;
                             & > .menu-step_comments_field_price-selection-field_selection {
                                     opacity:1;
-                                    transition:opacity 1000ms 50ms;
                                     & > .check-icon {
                                         animation:rotation-three-quarters 1000ms 150ms;
                                         background-color:$color-tertiary;
                                         color:$color-frequent;
-                                        background-clip: text;
-                                        -webkit-background-clip: text;
                                         border-radius: $border-radius-secondary;
                                     }
                                 } 
@@ -168,6 +162,9 @@
                             height:45px;
                             margin-top:10px;
                         }
+                        @include large-screen {
+                            white-space:nowrap;
+                        }
                     }
                     &_additionnal-information {
                         font-size:$font-size-secondary;
@@ -179,6 +176,9 @@
                             white-space:normal;
                             height:40px;
                             margin-bottom:10px;
+                        }
+                        @include large-screen {
+                            white-space:nowrap;
                         }
                     }
                 }
@@ -202,15 +202,15 @@
                             padding-bottom:20px;
                         }
                     }
-                &_selection {
-                    width:55px;
-                    height:100%;
-                    background-color:#99E2D0;
-                    border-radius:0px 20px 20px 0px;
-                    display:flex;
-                    align-items: center;
-                    justify-content: center;
-                    opacity:0;
+                    &_selection {
+                        width:55px;
+                        height:100%;
+                        background-color:#99E2D0;
+                        border-radius:0px 20px 20px 0px;
+                        display:flex;
+                        align-items: center;
+                        justify-content: center;
+                        opacity:0;
                     } 
                 }
             } 
